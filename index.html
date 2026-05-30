@@ -1,76 +1,144 @@
 <!DOCTYPE html>
-<html lang="ta">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ameer Azeem Live Channels - Official</title>
+    <title>Ameer Azeem Global - Official Media Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #030712; color: white; font-family: sans-serif; margin: 0; padding: 0; }
-        .header { background: linear-gradient(135deg, #1e1b4b 0%, #030712 100%); padding: 40px 20px; text-align: center; border-bottom: 2px solid #ef4444; }
-        .logo { width: 120px; margin-bottom: 15px; }
-        .main-container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .player-box { background: black; border-radius: 20px; overflow: hidden; border: 1px solid #334155; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); }
+        :root { --primary: #ef4444; --bg: #030712; --card: #111827; --text: #f9fafb; --text-dim: #9ca3af; }
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; margin: 0; overflow-x: hidden; }
+        
+        /* Premium Header */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .logo { height: 50px; cursor: pointer; }
+        .lang-btn { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 30px; font-weight: bold; cursor: pointer; font-size: 14px; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); }
+        
+        /* Hero Section */
+        .hero { padding: 150px 5% 60px; text-align: center; background: radial-gradient(circle at top, #1e1b4b 0%, #030712 100%); }
+        h1 { font-size: 48px; margin: 0; letter-spacing: -1px; background: linear-gradient(to right, #fff, #9ca3af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tagline { color: var(--text-dim); font-size: 18px; margin: 20px 0; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* Broadcaster Section (Permission Focus) */
+        .broadcaster-panel { background: var(--card); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 40px; margin: 50px auto; max-width: 900px; text-align: left; position: relative; overflow: hidden; }
+        .broadcaster-panel::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary); }
+        .broadcaster-title { color: var(--primary); font-size: 24px; font-weight: bold; margin-bottom: 15px; }
+
+        /* Video Showcase */
+        .player-container { width: 95%; max-width: 900px; margin: 40px auto; border-radius: 30px; overflow: hidden; border: 8px solid #1f2937; box-shadow: 0 30px 60px rgba(0,0,0,0.7); }
         iframe { width: 100%; height: 500px; border: none; }
-        .category-title { color: #ef4444; font-size: 24px; margin: 30px 0 15px 0; border-left: 5px solid #ef4444; padding-left: 15px; text-align: left; }
-        .channel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 15px; margin-bottom: 40px; }
-        .channel-card { background: #1e293b; padding: 15px; border-radius: 15px; cursor: pointer; transition: 0.3s; border: 1px solid transparent; }
-        .channel-card:hover { border-color: #ef4444; transform: translateY(-5px); background: #334155; }
-        .channel-card img { width: 100%; border-radius: 10px; margin-bottom: 8px; }
-        .channel-name { font-size: 12px; font-weight: bold; }
-        .footer { background: #0f172a; padding: 40px 20px; margin-top: 50px; font-size: 14px; color: #94a3b8; }
+
+        /* Channel Grid */
+        .channel-section { padding: 60px 5%; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { background: var(--card); padding: 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); cursor: pointer; }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(239,68,68,0.2); }
+        .card img { width: 100%; border-radius: 12px; margin-bottom: 10px; }
+        .card-name { font-size: 14px; font-weight: 600; color: #fff; }
+
+        /* Footer */
+        .footer { padding: 80px 5%; background: #010409; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        .footer p { color: var(--text-dim); max-width: 800px; margin: 0 auto; font-size: 14px; line-height: 1.8; }
+        
+        @media (max-width: 768px) { h1 { font-size: 32px; } iframe { height: 250px; } }
     </style>
 </head>
 <body>
 
-<div class="header">
+<nav class="navbar">
     <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/ameer%20azeem%20logo/logo.png.png" class="logo">
-    <h1>AMEER AZEEM LIVE</h1>
-    <p>ஒரே இடத்தில் அனைத்து நேரலைச் செய்திகளும்</p>
-</div>
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">தமிழ் (Tamil)</button>
+</nav>
+
+<section class="hero">
+    <h1 id="title">Next-Gen Media Distribution</h1>
+    <p class="tagline" id="tagline">Providing a unified digital gateway for global news and entertainment broadcasts.</p>
+    
+    <div class="player-container">
+        <iframe id="mainPlayer" src="https://www.youtube.com/embed/9M02G5c6x6w?autoplay=1&origin=https://ameer-azeem-live-channels.github.io" allowfullscreen></iframe>
+    </div>
+</section>
 
 <div class="main-container">
-    <div class="player-box">
-        <iframe id="videoPlayer" src="https://www.youtube.com/embed/9M02G5c6x6w?autoplay=1" allowfullscreen></iframe>
-    </div>
-
-    <div class="category-title">TAMIL NEWS LIVE</div>
-    <div class="channel-grid">
-        <div class="channel-card" onclick="playVideo('9M02G5c6x6w')">
-            <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/tamilchannels/sun-news.png.png">
-            <div class="channel-name">SUN NEWS</div>
-        </div>
-        <div class="channel-card" onclick="playVideo('pWpG_F-sVAs')">
-            <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/tamilchannels/news-seven.png.png">
-            <div class="channel-name">NEWS 7</div>
-        </div>
-        <div class="channel-card" onclick="playVideo('UC8Z-VjXBtDJTvq6aqkIskPg')">
-            <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/tamilchannels/polimer-news.png.png">
-            <div class="channel-name">POLIMER</div>
-        </div>
-        <div class="channel-card" onclick="playVideo('UC-JFyL0zDFOsPMpuWu39rPA')">
-            <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/tamilchannels/news-thanthi.png.png">
-            <div class="channel-name">THANTHI TV</div>
+    <div class="broadcaster-panel">
+        <div class="broadcaster-title" id="bpTitle">Official Broadcaster Partnership</div>
+        <p id="bpText">Ameer Azeem Global utilizes official YouTube API distribution technologies. We do not store or re-upload content. Our platform ensures 100% of views and ad revenue go directly to the original content owners.</p>
+        <div style="margin-top: 20px;">
+            <a href="mailto:jahanshathik@gmail.com" style="color: var(--primary); font-weight: bold; text-decoration: none;" id="contactLink">
+                <i class="fas fa-envelope"></i> Contact for Digital Permissions
+            </a>
         </div>
     </div>
 
-    <div class="category-title">ENGLISH GLOBAL NEWS</div>
-    <div class="channel-grid">
-        <div class="channel-card" onclick="playVideo('UCNye-wNBqNL5ZzHSJj3l8Bg')">
-            <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/englishchannels/al-Jazeera-english.png.png">
-            <div class="channel-name">AL JAZEERA</div>
+    <section class="channel-section">
+        <h2 id="gridTitle">Live Channels Fleet</h2>
+        <div class="grid">
+            <div class="card" onclick="play('9M02G5c6x6w')">
+                <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/tamilchannels/sun-news.png.png">
+                <div class="card-name">SUN NEWS</div>
+            </div>
+            <div class="card" onclick="play('pWpG_F-sVAs')">
+                <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/tamilchannels/news-seven.png.png">
+                <div class="card-name">NEWS 7</div>
+            </div>
+            <div class="card" onclick="play('UC8Z-VjXBtDJTvq6aqkIskPg')">
+                <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/tamilchannels/polimer-news.png.png">
+                <div class="card-name">POLIMER</div>
+            </div>
+            <div class="card" onclick="play('UCNye-wNBqNL5ZzHSJj3l8Bg')">
+                <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/englishchannels/al-Jazeera-english.png.png">
+                <div class="card-name">AL JAZEERA</div>
+            </div>
         </div>
-    </div>
+    </section>
 </div>
 
-<div class="footer">
-    <h3>அதிகாரப்பூர்வ அறிவிப்பு (Legal Disclaimer)</h3>
-    <p>நாங்கள் எந்த வீடியோவையும் எங்களது சர்வரில் சேமிக்கவில்லை. YouTube நிறுவனத்தின் அதிகாரப்பூர்வ 'Embed' தொழில்நுட்பத்தை மட்டுமே பயன்படுத்துகிறோம். இதன் மூலம் கிடைக்கும் வருவாய் மற்றும் பார்வைகள் அனைத்தும் அந்தந்த சேனல் உரிமையாளர்களுக்கே நேரடியாகச் சென்றடையும்.</p>
-    <p>தொடர்புக்கு: jahanshathik@gmail.com</p>
-</div>
+<footer class="footer">
+    <p id="disclaimer">Disclaimer: All logos and live streams are trademarks of their respective owners. We operate under the YouTube Terms of Service (Section 4C) regarding public embedding.</p>
+    <p style="margin-top: 20px;">&copy; 2024 Ameer Azeem Global Media Group. Verified GitHub Hub.</p>
+</footer>
 
 <script>
-    function playVideo(id) {
-        document.getElementById('videoPlayer').src = "https://www.youtube.com/embed/" + id + "?autoplay=1";
+    let isEnglish = true;
+    const data = {
+        en: {
+            btn: "தமிழ் (Tamil)",
+            title: "Next-Gen Media Distribution",
+            tagline: "Providing a unified digital gateway for global news and entertainment broadcasts.",
+            bpTitle: "Official Broadcaster Partnership",
+            bpText: "Ameer Azeem Global utilizes official YouTube API distribution technologies. Our platform ensures 100% of views and ad revenue go directly to original owners. If you wish to enable enhanced embedding for your channel, please contact us.",
+            gridTitle: "Live Channels Fleet",
+            disclaimer: "Disclaimer: All logos and live streams are trademarks of their respective owners. We operate under the YouTube Terms of Service regarding public embedding.",
+            contact: "Contact for Digital Permissions"
+        },
+        ta: {
+            btn: "English",
+            title: "அமீர் ரஜீம் சர்வதேச ஊடக மையம்",
+            tagline: "உலகளாவிய செய்திகள் மற்றும் பொழுதுபோக்கு நிகழ்ச்சிகளுக்கான அதிகாரப்பூர்வ டிஜிட்டல் நுழைவாயில்.",
+            bpTitle: "சேனல் உரிமையாளர்களுக்கான அறிவிப்பு",
+            bpText: "நாங்கள் யூடியூப் நிறுவனத்தின் அதிகாரப்பூர்வ தொழில்நுட்பத்தை மட்டுமே பயன்படுத்துகிறோம். இதன் மூலம் கிடைக்கும் 100% வருமானம் மற்றும் பார்வைகள் அந்தந்த சேனல் உரிமையாளர்களுக்கே நேரடியாகச் சென்றடையும். உங்கள் சேனலை எமது ஆப்பில் சிறப்பாகக் காட்சிப்படுத்த எங்களைத் தொடர்பு கொள்ளவும்.",
+            gridTitle: "நேரலை சேனல்கள்",
+            disclaimer: "அறிவிப்பு: அனைத்து லோகோக்கள் மற்றும் வீடியோக்கள் அந்தந்த நிறுவனங்களுக்கே சொந்தமானவை. நாங்கள் யூடியூப் விதிகளுக்கு உட்பட்டு பொதுப் பகிர்வு வசதியை மட்டுமே பயன்படுத்துகிறோம்.",
+            contact: "டிஜிட்டல் அனுமதி பெற எங்களைத் தொடர்பு கொள்ளவும்"
+        }
+    };
+
+    function toggleLang() {
+        isEnglish = !isEnglish;
+        const l = isEnglish ? data.en : data.ta;
+        document.getElementById('langBtn').innerText = l.btn;
+        document.getElementById('title').innerText = l.title;
+        document.getElementById('tagline').innerText = l.tagline;
+        document.getElementById('bpTitle').innerText = l.bpTitle;
+        document.getElementById('bpText').innerText = l.bpText;
+        document.getElementById('gridTitle').innerText = l.gridTitle;
+        document.getElementById('disclaimer').innerText = l.disclaimer;
+        document.getElementById('contactLink').innerHTML = `<i class="fas fa-envelope"></i> ${l.contact}`;
+    }
+
+    function play(id) {
+        document.getElementById('mainPlayer').src = "https://www.youtube.com/embed/" + id + "?autoplay=1&origin=https://ameer-azeem-live-channels.github.io";
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
 </script>
