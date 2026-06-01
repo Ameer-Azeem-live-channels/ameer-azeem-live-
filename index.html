@@ -1,147 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ta">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ameer Azeem Global - Official Media Portal</title>
+    
+    <!-- ✅ WHATSAPP/SOCIAL MEDIA PREVIEW SETTINGS (The Poster) -->
+    <title>Ameer Azeem Global - World Media Gateway</title>
+    <meta property="og:title" content="Ameer Azeem Global Live - 100+ Channels">
+    <meta property="og:description" content="7 மொழிகளில் நேரலைச் செய்திகள், கல்வி மற்றும் பொழுதுபோக்கு. பிளாக் செய்யப்படாத உயர்தர ஒளிபரப்பு!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/banner/banner1.png">
+    <meta property="og:url" content="https://ameer-azeem-live-channels.github.io/ameer-azeem-live-/">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #ef4444; --bg: #030712; --card: #111827; --text: #f9fafb; --text-dim: #9ca3af; }
-        * { box-sizing: border-box; transition: all 0.3s ease; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; margin: 0; overflow-x: hidden; }
+        :root { --primary: #ef4444; --bg: #030712; --card: #111827; --accent: #0ea5e9; }
+        * { box-sizing: border-box; transition: 0.3s; }
+        body { background-color: var(--bg); color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; line-height: 1.6; text-align: center; }
         
-        /* Premium Header */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .logo { height: 50px; cursor: pointer; }
-        .lang-btn { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 30px; font-weight: bold; cursor: pointer; font-size: 14px; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); }
-        
+        /* Navbar */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: rgba(3, 7, 18, 0.9); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .logo { height: 45px; }
+        .btn-lang { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 13px; }
+
         /* Hero Section */
-        .hero { padding: 150px 5% 60px; text-align: center; background: radial-gradient(circle at top, #1e1b4b 0%, #030712 100%); }
-        h1 { font-size: 48px; margin: 0; letter-spacing: -1px; background: linear-gradient(to right, #fff, #9ca3af); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .tagline { color: var(--text-dim); font-size: 18px; margin: 20px 0; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .hero { padding: 160px 5% 60px; background: radial-gradient(circle at top, #1e1b4b 0%, #030712 100%); }
+        h1 { font-size: clamp(30px, 5vw, 60px); font-weight: 900; margin: 0; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tagline { color: #94a3b8; font-size: 18px; margin: 20px 0 40px; }
 
-        /* Broadcaster Section (Permission Focus) */
-        .broadcaster-panel { background: var(--card); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 40px; margin: 50px auto; max-width: 900px; text-align: left; position: relative; overflow: hidden; }
-        .broadcaster-panel::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary); }
-        .broadcaster-title { color: var(--primary); font-size: 24px; font-weight: bold; margin-bottom: 15px; }
+        /* Direct APK Download */
+        .dl-main { background: white; color: black !important; padding: 22px 50px; border-radius: 60px; font-size: 20px; font-weight: 900; text-decoration: none; display: inline-flex; align-items: center; gap: 15px; box-shadow: 0 20px 50px rgba(255,255,255,0.1); border: 2px solid white; }
+        .dl-main:hover { background: var(--primary); color: white !important; border-color: var(--primary); transform: translateY(-5px); }
 
-        /* Video Showcase */
-        .player-container { width: 95%; max-width: 900px; margin: 40px auto; border-radius: 30px; overflow: hidden; border: 8px solid #1f2937; box-shadow: 0 30px 60px rgba(0,0,0,0.7); }
-        iframe { width: 100%; height: 500px; border: none; }
+        /* Live Stats (AI Feature) */
+        .stats-bar { display: flex; justify-content: center; gap: 40px; margin: 40px 0; }
+        .stat-item { text-align: center; }
+        .stat-value { color: var(--primary); font-size: 24px; font-weight: bold; }
+        .stat-label { color: #64748b; font-size: 12px; }
 
-        /* Channel Grid */
-        .channel-section { padding: 60px 5%; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 25px; margin-top: 40px; }
-        .card { background: var(--card); padding: 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); cursor: pointer; }
-        .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(239,68,68,0.2); }
-        .card img { width: 100%; border-radius: 12px; margin-bottom: 10px; }
-        .card-name { font-size: 14px; font-weight: 600; color: #fff; }
+        /* Compliance Box (Fixes Block Issues) */
+        .compliance-box { background: #0f172a; border: 1px solid var(--accent); border-radius: 30px; padding: 40px; margin: 60px 5%; text-align: left; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .compliance-box h2 { color: var(--accent); margin-top: 0; }
 
-        /* Footer */
-        .footer { padding: 80px 5%; background: #010409; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
-        .footer p { color: var(--text-dim); max-width: 800px; margin: 0 auto; font-size: 14px; line-height: 1.8; }
-        
-        @media (max-width: 768px) { h1 { font-size: 32px; } iframe { height: 250px; } }
+        /* Share & Connect */
+        .share-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 40px 0; }
+        .share-btn { padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 10px; }
+        .whatsapp { background: #25d366; } .facebook { background: #1877f2; } .telegram { background: #0088cc; }
+
+        /* Feedback Form */
+        .feedback-area { background: var(--card); padding: 50px 5%; border-radius: 40px; margin: 60px 5%; }
+        input, textarea { width: 100%; max-width: 600px; padding: 15px; margin-bottom: 15px; border-radius: 12px; border: 1px solid #334155; background: #1e293b; color: white; }
+        .send-btn { background: var(--accent); color: white; border: none; padding: 15px 40px; border-radius: 12px; font-weight: bold; cursor: pointer; }
+
+        .footer { padding: 80px 5%; background: #000; border-top: 1px solid rgba(255,255,255,0.1); }
+        .email-link { font-size: clamp(18px, 4vw, 32px); color: var(--primary); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <nav class="navbar">
     <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/ameer%20azeem%20logo/logo.png.png" class="logo">
-    <button class="lang-btn" onclick="toggleLang()" id="langBtn">தமிழ் (Tamil)</button>
+    <button class="btn-lang" onclick="toggleLang()" id="lBtn">English</button>
 </nav>
 
 <section class="hero">
-    <h1 id="title">Next-Gen Media Distribution</h1>
-    <p class="tagline" id="tagline">Providing a unified digital gateway for global news and entertainment broadcasts.</p>
+    <h1 id="hTitle">அமீர் அஜீம் குளோபல் மீடியா</h1>
+    <p class="tagline" id="hTag">செய்திகள், கல்வி, கிட்ஸ் மற்றும் பொழுதுபோக்கு - 7 மொழிகளில் உலகத்தரம் வாய்ந்த நேரலை தளம்.</p>
     
-    <div class="player-container">
-        <iframe id="mainPlayer" src="https://www.youtube.com/embed/9M02G5c6x6w?autoplay=1&origin=https://ameer-azeem-live-channels.github.io" allowfullscreen></iframe>
+    <a href="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/app-release.apk" class="dl-main">
+        <i class="fab fa-android" style="font-size: 30px;"></i> <span id="dlText">இப்போதே தரவிறக்கம் செய் (Android APK)</span>
+    </a>
+
+    <div class="stats-bar">
+        <div class="stat-item"><div class="stat-value">100+</div><div class="stat-label">Live Channels</div></div>
+        <div class="stat-item"><div class="stat-value">HD</div><div class="stat-label">Quality</div></div>
+        <div class="stat-item"><div class="stat-value">24/7</div><div class="stat-label">Broadcasting</div></div>
     </div>
 </section>
 
-<div class="main-container">
-    <div class="broadcaster-panel">
-        <div class="broadcaster-title" id="bpTitle">Official Broadcaster Partnership</div>
-        <p id="bpText">Ameer Azeem Global utilizes official YouTube API distribution technologies. We do not store or re-upload content. Our platform ensures 100% of views and ad revenue go directly to the original content owners.</p>
-        <div style="margin-top: 20px;">
-            <a href="mail: jahanshathik@gmail.com" style="color: var(--primary); font-weight: bold; text-decoration: none;" id="contactLink">
-                <i class="fas fa-envelope"></i> Contact for Digital Permissions
-            </a>
-        </div>
+<div class="compliance-box">
+    <h2 id="pTitle"><i class="fas fa-shield-alt"></i> உத்தியோகபூர்வ ஊடகக் கொள்கை (Media Aggregator)</h2>
+    <p id="pText" style="font-size: 17px; color: #cbd5e1;">
+        அமீர் அஜீம் குளோபல் ஒரு <b>டிஜிட்டல் ஊடகத் தொகுப்பாளர்</b> ஆகும். நாங்கள் எந்த வீடியோவையும் எமது சர்வரில் சேமிக்கவில்லை. YouTube-ன் அதிகாரப்பூர்வ 'Embed' தொழில்நுட்பத்தை மட்டுமே பயன்படுத்துகிறோம். இதன் மூலம் 100% வருமானம் மற்றும் பார்வைகள் அந்தந்த சேனல் உரிமையாளர்களுக்கே நேரடியாகச் சென்றடையும்.
+    </p>
+    <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
+        <a href="mailto:jahanshathik@gmail.com" class="btn-lang" style="text-decoration:none; background:#1e293b;"><i class="fas fa-handshake"></i> <span id="pBtn1">கூட்டுறவு அனுமதி கோர</span></a>
+        <a href="mailto:jahanshathik@gmail.com" class="btn-lang" style="text-decoration:none;"><i class="fas fa-trash"></i> <span id="pBtn2">நீக்கக் கோர (Takedown)</span></a>
     </div>
+</div>
 
-    <section class="channel-section">
-        <h2 id="gridTitle">Live Channels Fleet</h2>
-        <div class="grid">
-            <div class="card" onclick="play('9M02G5c6x6w')">
-                <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/tamilchannels/sun-news.png.png">
-                <div class="card-name">SUN NEWS</div>
-            </div>
-            <div class="card" onclick="play('pWpG_F-sVAs')">
-                <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/tamilchannels/news-seven.png.png">
-                <div class="card-name">NEWS 7</div>
-            </div>
-            <div class="card" onclick="play('UC8Z-VjXBtDJTvq6aqkIskPg')">
-                <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/tamilchannels/polimer-news.png.png">
-                <div class="card-name">POLIMER</div>
-            </div>
-            <div class="card" onclick="play('UCNye-wNBqNL5ZzHSJj3l8Bg')">
-                <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/englishchannels/al-Jazeera-english.png.png">
-                <div class="card-name">AL JAZEERA</div>
-            </div>
-        </div>
-    </section>
+<section class="share-grid">
+    <a href="https://api.whatsapp.com/send?text=உலகின் முன்னணி 100+ சேனல்களை ஒரே ஆப்பில் பாருங்கள்! டவுன்லோட் செய்ய: https://ameer-azeem-live-channels.github.io/ameer-azeem-live-/" class="share-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ameer-azeem-live-channels.github.io/ameer-azeem-live-/" class="share-btn facebook" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+</nav>
+
+<div class="feedback-area">
+    <h2 id="fTitle"><i class="fas fa-lightbulb"></i> புதிய சேனல்கள் பரிந்துரைக்க</h2>
+    <p style="color: #94a3b8;">உங்களுக்கு விருப்பமான சேனல்கள் எமது ஆப்பில் இல்லை என்றால் இங்கே தெரிவியுங்கள்.</p>
+    <form action="mailto:jahanshathik@gmail.com" method="post" enctype="text/plain">
+        <input type="text" placeholder="உங்கள் பெயர் (Your Name)" required><br>
+        <input type="text" placeholder="சேனல் பெயர் (Desired Channel Name)" required><br>
+        <textarea rows="4" placeholder="உங்கள் கருத்துக்கள் (Feedback)"></textarea><br>
+        <button type="submit" class="send-btn">SUBMIT TO ADMIN</button>
+    </form>
 </div>
 
 <footer class="footer">
-    <p id="disclaimer">Disclaimer: All logos and live streams are trademarks of their respective owners. We operate under the YouTube Terms of Service (Section 4C) regarding public embedding.</p>
-    <p style="margin-top: 20px;">&copy; 2024 Ameer Azeem Global Media Group. Verified GitHub Hub.</p>
+    <p id="fText" style="color: #64748b;">For Partnership, Digital Rights & Media Inquiries:</p>
+    <a href="mailto:jahanshathik@gmail.com" class="email-link">jahanshathik@gmail.com</a>
+    <p style="margin-top: 60px; font-size: 13px; color: #334155;">&copy; 2024 Ameer Azeem Global Media Group. Verified GitHub Partner Portal.</p>
 </footer>
 
 <script>
-    let isEnglish = true;
+    let isEn = false;
     const data = {
         en: {
-            btn: "தமிழ் (Tamil)",
-            title: "Next-Gen Media Distribution",
-            tagline: "Providing a unified digital gateway for global news and entertainment broadcasts.",
-            bpTitle: "Official Broadcaster Partnership",
-            bpText: "Ameer Azeem Global utilizes official YouTube API distribution technologies. Our platform ensures 100% of views and ad revenue go directly to original owners. If you wish to enable enhanced embedding for your channel, please contact us.",
-            gridTitle: "Live Channels Fleet",
-            disclaimer: "Disclaimer: All logos and live streams are trademarks of their respective owners. We operate under the YouTube Terms of Service regarding public embedding.",
-            contact: "Contact for Digital Permissions"
+            lBtn: "தமிழ்", hTitle: "Ameer Azeem Global Media", hTag: "The Ultimate Gateway for Live News, Education, Kids & Entertainment.",
+            dlText: "DOWNLOAD OFFICIAL APP (v1.0)", pTitle: "Broadcaster Aggregator Policy",
+            pText: "We operate as a <b>Media Aggregator</b>. We strictly use official YouTube API embedding. This ensures 100% of views and ad revenue go directly to content owners. We do not re-host content.",
+            pBtn1: "Request Partnership", pBtn2: "Request Content Removal", fTitle: "Suggest New Channels", fText: "For Partnership & Digital Rights Inquiries:"
         },
         ta: {
-            btn: "English",
-            title: "அமீர் அஜீம் சர்வதேச ஊடக மையம்",
-            tagline: "உலகளாவிய செய்திகள் மற்றும் பொழுதுபோக்கு நிகழ்ச்சிகளுக்கான அதிகாரப்பூர்வ டிஜிட்டல் நுழைவாயில்.",
-            bpTitle: "சேனல் உரிமையாளர்களுக்கான அறிவிப்பு",
-            bpText: "நாங்கள் யூடியூப் நிறுவனத்தின் அதிகாரப்பூர்வ தொழில்நுட்பத்தை மட்டுமே பயன்படுத்துகிறோம். இதன் மூலம் கிடைக்கும் 100% வருமானம் மற்றும் பார்வைகள் அந்தந்த சேனல் உரிமையாளர்களுக்கே நேரடியாகச் சென்றடையும். உங்கள் சேனலை எமது ஆப்பில் சிறப்பாகக் காட்சிப்படுத்த எங்களைத் தொடர்பு கொள்ளவும்.",
-            gridTitle: "நேரலை சேனல்கள்",
-            disclaimer: "அறிவிப்பு: அனைத்து லோகோக்கள் மற்றும் வீடியோக்கள் அந்தந்த நிறுவனங்களுக்கே சொந்தமானவை. நாங்கள் யூடியூப் விதிகளுக்கு உட்பட்டு பொதுப் பகிர்வு வசதியை மட்டுமே பயன்படுத்துகிறோம்.",
-            contact: "டிஜிட்டல் அனுமதி பெற எங்களைத் தொடர்பு கொள்ளவும்"
+            lBtn: "English", hTitle: "அமீர் அஜீம் குளோபல் மீடியா", hTag: "செய்திகள், கல்வி, கிட்ஸ் மற்றும் பொழுதுபோக்கு - 7 மொழிகளில் உலகத்தரம் வாய்ந்த நேரலை தளம்.",
+            dlText: "இப்போதே தரவிறக்கம் செய் (Android APK)", pTitle: "உத்தியோகபூர்வ ஊடகக் கொள்கை",
+            pText: "அமீர் அஜீம் குளோபல் ஒரு <b>டிஜிட்டல் ஊடகத் தொகுப்பாளர்</b> ஆகும். நாங்கள் YouTube-ன் அதிகாரப்பூர்வ தொழில்நுட்பத்தை மட்டுமே பயன்படுத்துகிறோம். இதன் மூலம் 100% வருமானம் அந்தந்த உரிமையாளர்களுக்கே செல்கிறது.",
+            pBtn1: "கூட்டுறவு அனுமதி கோர", pBtn2: "நீக்கக் கோர (Takedown)", fTitle: "புதிய சேனல்கள் பரிந்துரைக்க", fText: "கூட்டுறவு மற்றும் டிஜிட்டல் உரிமைகள் தொடர்பான விசாரணைகளுக்கு:"
         }
     };
 
     function toggleLang() {
-        isEnglish = !isEnglish;
-        const l = isEnglish ? data.en : data.ta;
-        document.getElementById('langBtn').innerText = l.btn;
-        document.getElementById('title').innerText = l.title;
-        document.getElementById('tagline').innerText = l.tagline;
-        document.getElementById('bpTitle').innerText = l.bpTitle;
-        document.getElementById('bpText').innerText = l.bpText;
-        document.getElementById('gridTitle').innerText = l.gridTitle;
-        document.getElementById('disclaimer').innerText = l.disclaimer;
-        document.getElementById('contactLink').innerHTML = `<i class="fas fa-envelope"></i> ${l.contact}`;
-    }
-
-    function play(id) {
-        document.getElementById('mainPlayer').src = "https://www.youtube.com/embed/" + id + "?autoplay=1&origin=https://ameer-azeem-live-channels.github.io";
-        window.scrollTo({top: 0, behavior: 'smooth'});
+        isEn = !isEn;
+        const l = isEn ? data.en : data.ta;
+        document.getElementById('lBtn').innerText = l.lBtn;
+        document.getElementById('hTitle').innerText = l.hTitle;
+        document.getElementById('hTag').innerText = l.hTag;
+        document.getElementById('dlText').innerText = l.dlText;
+        document.getElementById('pTitle').innerText = l.pTitle;
+        document.getElementById('pText').innerHTML = l.pText;
+        document.getElementById('pBtn1').innerText = l.pBtn1;
+        document.getElementById('pBtn2').innerText = l.pBtn2;
+        document.getElementById('fTitle').innerText = l.fTitle;
+        document.getElementById('fText').innerText = l.fText;
     }
 </script>
-
 </body>
 </html>
