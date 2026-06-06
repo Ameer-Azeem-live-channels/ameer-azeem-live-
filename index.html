@@ -1,6 +1,6 @@
-<!DOCTYPE html> <html lang="ta"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Ameer Azeem Global - World Class Media Hub</title>
-<!-- ✅ WHATSAPP PREVIEW SETTINGS -->
-<meta property="og:title" content="Ameer Azeem Live - 7 Languages & 100+ Channels">
+<!DOCTYPE html> <html lang="ta"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Ameer Azeem Global - World Class Media Gateway</title>
+<!-- ✅ WHATSAPP PREVIEW -->
+<meta property="og:title" content="Ameer Azeem Global Live - 100+ Channels">
 <meta property="og:image" content="logo.png.png">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,28 +13,28 @@
     .navbar { background: rgba(0, 0, 0, 0.85); backdrop-filter: saturate(180%) blur(20px); padding: 15px 10%; position: fixed; width: 100%; top: 0; z-index: 2000; border-bottom: 1px solid #333; }
     .nav-brand { font-weight: 600; font-size: 14px; color: #fff; letter-spacing: 1px; }
 
-    /* ✅ Fixed Balanced Banner Slider */
+    /* ✅ Balanced Smooth Banner Slider */
     .slider-box { margin-top: 50px; width: 100%; height: 320px; overflow: hidden; position: relative; border-bottom: 2px solid #333; }
-    .slider { display: flex; width: 400%; height: 100%; transition: 1s cubic-bezier(0.4, 0, 0.2, 1); }
+    .slider { display: flex; width: 400%; height: 100%; transition: 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
     .slide { width: 100%; height: 100%; flex-shrink: 0; background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #000; }
 
-    /* ✅ Raw Logo & Fire Flash (As Requested) */
+    /* ✅ Raw Logo & Fire Flash */
     .logo-hero { padding: 40px 5% 30px; background: #000; }
     .logo-wrap { position: relative; width: 180px; height: 180px; margin: 0 auto; cursor: pointer; display: block; text-decoration: none; }
     .logo-main { width: 100%; z-index: 10; position: relative; animation: glossy 3s infinite; }
-    @keyframes glossy { 0%, 100% { filter: brightness(1) drop-shadow(0 0 5px white); } 50% { filter: brightness(1.4) drop-shadow(0 0 25px var(--primary)); } }
+    @keyframes glossy { 0%, 100% { filter: brightness(1) drop-shadow(0 0 5px white); } 50% { filter: brightness(1.4) drop-shadow(0 0 20px var(--primary)); } }
 
     .fire-flash { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 150%; height: 150%; background: radial-gradient(circle, var(--fire) 0%, transparent 70%); border-radius: 50%; opacity: 0; pointer-events: none; }
     .logo-wrap:active .fire-flash { animation: burst 0.5s ease-out; }
-    @keyframes burst { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(3); opacity: 0; } }
+    @keyframes burst { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(3.5); opacity: 0; } }
 
-    .action-label { font-size: 20px; font-weight: 900; margin-top: 15px; color: white; letter-spacing: 1px; }
+    .action-label { font-size: 22px; font-weight: 900; margin-top: 20px; color: white; letter-spacing: 1px; }
     .sub-label { color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 5px; text-transform: uppercase; }
 
-    /* Language Bar */
+    /* ✅ Language Selection Bar */
     .lang-bar { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; padding: 25px 5%; background: #000; }
-    .l-btn { padding: 8px 18px; border-radius: 20px; border: 1px solid #444; background: transparent; color: #a1a1a6; cursor: pointer; font-weight: 600; font-size: 12px; }
-    .l-btn.active, .l-btn:hover { background: #fff; color: #000; border-color: #fff; transform: scale(1.05); }
+    .l-btn { padding: 10px 18px; border-radius: 20px; border: 1px solid #444; background: transparent; color: #a1a1a6; cursor: pointer; font-weight: 600; font-size: 12px; }
+    .l-btn.active, .l-btn:hover { background: #fff; color: #000; border-color: #fff; }
 
     /* Showcase Area */
     .stage { max-width: 1000px; margin: 40px auto; padding: 25px; background: #1c1c1e; border-radius: 35px; box-shadow: 0 40px 100px rgba(0,0,0,0.9); }
@@ -47,7 +47,7 @@
     .card img { width: 100%; border-radius: 10px; height: 60px; object-fit: contain; }
     .ch-name { font-size: 9px; font-weight: 700; color: #a1a1a6; margin-top: 8px; text-transform: uppercase; }
 
-    /* Interaction Hubs (Multilingual) */
+    /* Interactive Hubs */
     .interact { padding: 60px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
     .box { background: #1c1c1e; padding: 40px; border-radius: 35px; text-align: left; border: 1px solid #333; }
     input, textarea { width: 100%; padding: 15px; margin-bottom: 12px; border-radius: 12px; border: 1px solid #333; background: #000; color: #fff; }
@@ -58,23 +58,24 @@
     @media (max-width: 768px) { .player-wrap { height: 250px; } .slider-box { height: 180px; } .navbar { justify-content: center; } .nav-brand { display: none; } }
 </style>
 </head> <body>
-<nav class="navbar"> <div class="nav-brand">AMEER AZEEM GLOBAL MEDIA</div> </nav>
+<nav class="navbar"> <div class="nav-brand" id="navBrand">AMEER AZEEM GLOBAL MEDIA</div> <button class="l-btn" style="color: #fff; border-color: #fff; margin-left: 20px;" onclick="toggleEnglishMode()" id="masterLangBtn">English Mode</button> </nav>
 <div class="slider-box"> <div class="slider" id="mainSlider"> <div class="slide" style="background-image: url('banner1.png');"></div> <div class="slide" style="background-image: url('banner2.png');"></div> <div class="slide" style="background-image: url('banner3.png');"></div> <div class="slide" style="background-image: url('banner4.png');"></div> </div> </div>
-<section class="logo-hero"> <a href="app-release.apk" class="logo-wrap"> <div class="fire-flash"></div> <img src="logo.png.png" class="logo-main" onerror="this.src='https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/ameer%20azeem%20logo/logo.png.png'"> </a> <div class="action-label" id="act1">CLICK LOGO</div> <div class="sub-label" id="act2">DOWNLOAD APP & INSTALL</div> </section>
-<div class="lang-bar"> <button class="l-btn active" id="l_ta" onclick="changeMasterLang('ta')">Tamil</button> <button class="l-btn" id="l_en" onclick="changeMasterLang('en')">English</button> <button class="l-btn" id="l_ar" onclick="changeMasterLang('ar')">Arabic</button> <button class="l-btn" id="l_hi" onclick="changeMasterLang('hi')">Hindi</button> <button class="l-btn" id="l_ml" onclick="changeMasterLang('ml')">Malayalam</button> <button class="l-btn" id="l_te" onclick="changeMasterLang('te')">Telugu</button> <button class="l-btn" id="l_kn" onclick="changeMasterLang('kn')">Kannada</button> </div>
-<div class="stage"> <h2 id="prevTitle" style="font-weight: 400; letter-spacing: 2px;">LIVE SHOWCASE</h2> <div class="player-wrap"> <!-- ✅ Fixed Player URL for Blocking --> <iframe id="vid" src="https://www.youtube.com/embed/live_stream?channel=UCYlh4lH762HvHt6mmiecyWQ&autoplay=1&origin=https://ameer-azeem-live-channels.github.io" allowfullscreen></iframe> </div> <div class="grid" id="channelGrid"></div> </div>
-<section class="interact"> <div class="box"> <h3 id="h3_group">WhatsApp Community</h3> <p id="p_group" style="color:#a1a1a6; font-size:14px; margin-bottom: 20px;">Join our official group for instant news updates.</p> <a href="https://chat.whatsapp.com/YOUR_GROUP_LINK" class="join-btn" target="_blank"><i class="fab fa-whatsapp"></i> JOIN GROUP </a> </div> <div class="box"> <h3 id="h3_share">Share Now</h3> <div style="display: flex; gap: 10px; margin-top: 15px;"> <a href="https://api.whatsapp.com/send?text=Ameer Azeem Live App!" style="background:#25d366; color:white; padding:15px; border-radius:12px; text-decoration:none;"><i class="fab fa-whatsapp"></i></a> <a href="https://www.facebook.com/sharer/sharer.php" style="background:#1877f2; color:white; padding:15px; border-radius:12px; text-decoration:none;"><i class="fab fa-facebook-f"></i></a> </div> </div> <div class="box"> <h3 id="h3_feed">Your Feedback</h3> <form action="mailto:jahanshathik@gmail.com" method="post" enctype="text/plain"> <input type="text" placeholder="Name" required> <textarea rows="3" placeholder="Suggestions"></textarea> <button type="submit" class="s-btn">SUBMIT</button> </form> </div> </section>
-<footer class="footer"> <h2 id="pTitle" style="color:var(--accent); font-weight: 400;">YouTube Aggregator Policy</h2> <p id="pText" style="color: #a1a1a6; max-width:800px; margin: 20px auto;">We are a digital media aggregator. All content remains property of respective owners. 100% ad revenue goes directly to content creators.</p> <p style="margin-top: 40px; font-size: 11px; color: #444;">© 2024 Ameer Azeem Global Media. Built for Excellence.</p> </footer>
+<section class="logo-hero"> <a href="app-release.apk" class="logo-wrap"> <div class="fire-flash"></div> <img src="logo.png.png" class="logo-main" id="logoImg" onerror="this.src='https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/ameer%20azeem%20logo/logo.png.png'"> </a> <div class="action-label" id="act1">CLICK LOGO</div> <div class="sub-label" id="act2">DOWNLOAD APP & INSTALL</div> </section>
+<div class="lang-bar"> <button class="l-btn active" id="btn_ta" onclick="changeMasterUI('ta')">Tamil</button> <button class="l-btn" id="btn_en" onclick="changeMasterUI('en')">English</button> <button class="l-btn" id="btn_ar" onclick="changeMasterUI('ar')">Arabic</button> <button class="l-btn" id="btn_hi" onclick="changeMasterUI('hi')">Hindi</button> <button class="l-btn" id="btn_ml" onclick="changeMasterUI('ml')">Malayalam</button> <button class="l-btn" id="btn_te" onclick="changeMasterUI('te')">Telugu</button> <button class="l-btn" id="btn_kn" onclick="changeMasterUI('kn')">Kannada</button> </div>
+<div class="stage"> <h2 id="prevTitle" style="font-weight: 400; letter-spacing: 2px;">LIVE SHOWCASE</h2> <div class="player-wrap"> <iframe id="vid" src="https://www.youtube.com/embed/live_stream?channel=UCYlh4lH762HvHt6mmiecyWQ&autoplay=1&origin=https://ameer-azeem-live-channels.github.io" allowfullscreen></iframe> </div> <div class="grid" id="channelGrid"></div> </div>
+<section class="interact"> <div class="box"> <h3 id="h3_group">WhatsApp Community</h3> <p id="p_group" style="color:#a1a1a6; font-size:14px; margin-bottom: 20px;">Join our official group for instant news updates.</p> <a href="https://chat.whatsapp.com/YOUR_GROUP_LINK" class="join-btn" target="_blank" id="joinBtnText"><i class="fab fa-whatsapp"></i> JOIN GROUP </a> </div> <div class="box"> <h3 id="h3_share">Share Now</h3> <div style="display: flex; gap: 10px; margin-top: 15px;"> <a href="https://api.whatsapp.com/send?text=Check out Ameer Azeem Live App!" style="background:#25d366; color:white; padding:15px; border-radius:12px; text-decoration:none;"><i class="fab fa-whatsapp"></i></a> <a href="https://www.facebook.com/sharer/sharer.php" style="background:#1877f2; color:white; padding:15px; border-radius:12px; text-decoration:none;"><i class="fab fa-facebook-f"></i></a> </div> </div> <div class="box"> <h3 id="h3_feed">Your Feedback</h3> <form action="mailto:jahanshathik@gmail.com" method="post" enctype="text/plain"> <input type="text" id="f_name" placeholder="Name" required> <textarea rows="3" id="f_msg" placeholder="Suggestions"></textarea> <button type="submit" class="s-btn" id="sBtnText">SUBMIT</button> </form> </div> </section>
+<footer class="footer"> <h2 id="pTitle" style="color:var(--accent); font-weight: 400;">YouTube Aggregator Policy</h2> <p id="pText" style="color: #a1a1a6; max-width:800px; margin: 20px auto;">We are a digital media aggregator. All content remains property of respective owners. 100% ad revenue goes directly to content creators.</p> <p style="margin-top: 40px; font-size: 11px; color: #444;">© 2024 Ameer Azeem Global Media.</p> </footer>
 <script> const GIST = "https://gist.githubusercontent.com/Ameer-Azeem-live-channels/41a0c696f5fb2cb0385390afab22dc7b/raw/channels.json";
-// ✅ Complete Multi-Language Database
+// ✅ Complete Multi-Language Database for All 15+ UI Elements
 const translations = {
-    ta: { act1: "லோகோவை அழுத்தவும்", act2: "ஆப் டவுன்லோட் & இன்ஸ்டால்", prev: "நேரலை மாதிரி", group: "வாட்ஸ்அப் குழு", p_group: "அனைத்து அப்டேட்டுகளையும் பெற எம்முடன் இணையுங்கள்.", share: "நண்பர்களுக்குப் பகிருங்கள்", feed: "உங்கள் கருத்துக்கள்", pt: "யூடியூப் அக்ரிகேட்டர் கொள்கை", ptx: "நாங்கள் ஒரு டிஜிட்டல் ஊடகத் தொகுப்பாளர் மட்டுமே. 100% வருமானம் உரிமையாளர்களுக்கே நேரடியாகச் சென்றடையும்." },
-    en: { act1: "CLICK LOGO", act2: "DOWNLOAD APP & INSTALL", prev: "LIVE SHOWCASE", group: "WhatsApp Community", p_group: "Join our official group for instant news updates.", share: "Share Now", feed: "Your Feedback", pt: "YouTube Aggregator Policy", ptx: "We operate as a digital media aggregator. 100% revenue goes directly to original content owners." }
+    ta: { nav: "அமீர் அஜீம் குளோபல் மீடியா", mBtn: "English Mode", act1: "லோகோவை அழுத்தவும்", act2: "ஆப் டவுன்லோட் & இன்ஸ்டால்", prev: "நேரலை மாதிரி", group: "வாட்ஸ்அப் குழு", p_group: "அனைத்து அப்டேட்டுகளையும் பெற எமது வாட்ஸ்அப் குழுவில் இணையுங்கள்.", join: "குழுவில் இணையுங்கள்", share: "பகிருங்கள்", feed: "உங்கள் கருத்துக்கள்", f_n: "பெயர்", f_m: "கருத்துக்கள்", s_b: "அனுப்புக", pt: "யூடியூப் அக்ரிகேட்டர் கொள்கை", ptx: "நாங்கள் ஒரு டிஜிட்டல் ஊடகத் தொகுப்பாளர் மட்டுமே. 100% வருமானம் உரிமையாளர்களுக்கே நேரடியாகச் சென்றடையும்." },
+    en: { nav: "AMEER AZEEM GLOBAL MEDIA", mBtn: "தமிழ் பதிப்பு", act1: "CLICK LOGO", act2: "DOWNLOAD APP & INSTALL", prev: "LIVE SHOWCASE", group: "WhatsApp Community", p_group: "Join our official group for instant news updates.", join: "JOIN GROUP", share: "Share Now", feed: "Your Feedback", f_n: "Name", f_m: "Suggestions", s_b: "SUBMIT", pt: "YouTube Aggregator Policy", ptx: "We operate as a digital media aggregator. 100% revenue goes directly to original content owners." },
+    ar: { nav: "أمير عظيم العالمية", mBtn: "தமிழ்", act1: "اضغط على الشعار", act2: "تحميل التطبيق", prev: "عرض مباشر", group: "مجموعة واتساب", p_group: "انضم إلى مجموعتنا للحصول على التحديثات.", join: "انضم الآن", share: "شارك الآن", feed: "تعليقاتكم", f_n: "الاسم", f_m: "اقتراحات", s_b: "إرسال", pt: "سياسة مجمع اليوتيوب", ptx: "نحن مجمع وسائط رقمية. تذهب جميع الإيرادات إلى المالكين." }
 };
 
 const channelData = {
     ta: [{n:"SUN NEWS", i:"sun-news.png.png", id:"UCYlh4lH762HvHt6mmiecyWQ"}, {n:"POLIMER", i:"polimer-news.png.png", id:"UC8Z-VjXBtDJTvq6aqkIskPg"}, {n:"THANTHI TV", i:"news-thanthi.png.png", id:"UC-JFyL0zDFOsPMpuWu39rPA"}, {n:"NEWS 7", i:"news-seven.png.png", id:"UCGyZswzm4G-wEfRQHgMSAuw"}, {n:"NEWS 18", i:"tamilnadu-news18.png.png", id:"UCat88i6_rELqI_prwvjspRA"}, {n:"SATHIYAM", i:"sathiya-news.png.png", id:"UC2ziCMHFPWkFHjocUMXT__Q"}],
-    en: [{n:"AL JAZEERA", i:"al-Jazeera-english.png.png", id:"UCNye-wNBqNL5ZzHSJj3l8Bg"}],
+    en: [{n:"AL JAZEERA", i:"al-Jazeera-english.png.png", id:"UCNye-wNBqNL5ZzHSJj3l8Bg"}, {n:"SKY NEWS", i:"Sky-news-english.png.png", id:"UC7E-C2vH6SIn2vXU_p5_fFw"}],
     ar: [{n:"AL ARABIYA", i:"al-arabiya-news.png.png", id:"UCahpxixMCwoANA7VsqnshU"}],
     hi: [{n:"AAJ TAK", i:"aaj-tak-hindi-news.png.png", id:"UCt9X-N6Xv_pndS_S_v5v9zA"}],
     ml: [{n:"ASIANET NEWS", i:"asianet-news.png.png", id:"UC-T0KswVw9SAnI3Wj-7v7Yg"}],
@@ -83,7 +84,7 @@ const channelData = {
 };
 
 let curL = 'ta'; let gCache = {};
-let sIdx = 0; setInterval(() => { sIdx = (sIdx + 1) % 4; document.getElementById('mainSlider').style.transform = `translateX(-${sIdx * 100}%)`; }, 5000);
+let sIdx = 0; setInterval(() => { sIdx = (sIdx + 1) % 4; document.getElementById('mainSlider').style.transform = `translateX(-${sIdx * 100}%)`; }, 7000);
 
 async function init() {
     try { const r = await fetch(GIST + "?t=" + Date.now()); gCache = await r.json(); } catch(e) {}
@@ -96,7 +97,6 @@ function render() {
     grid.innerHTML = "";
     data.forEach(c => {
         const vid = gCache[c.i] || c.id;
-        // ✅ Fixed Image Path: Screenshot shows images are in root
         grid.innerHTML += `<div class="card" onclick="play('${vid}')">
             <img src="${c.i}" onerror="this.src='https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/tamilchannels/${c.i}'">
             <div class="ch-name">${c.n}</div>
@@ -105,24 +105,35 @@ function render() {
 }
 
 function play(id) {
-    document.getElementById('vid').src = "https://www.youtube.com/embed/live_stream?channel="+id+"&autoplay=1&origin=https://ameer-azeem-live-channels.github.io";
+    let url = id.length === 11 ? "https://www.youtube.com/embed/"+id : "https://www.youtube.com/embed/live_stream?channel="+id;
+    document.getElementById('vid').src = url + "?autoplay=1&origin=https://ameer-azeem-live-channels.github.io";
     window.scrollTo({top: 450, behavior: 'smooth'});
 }
 
-function changeMasterLang(l) {
+function changeMasterUI(l) {
     curL = l; const d = translations[l] || translations['en'];
+    document.getElementById('navBrand').innerText = d.nav;
+    document.getElementById('masterLangBtn').innerText = d.mBtn;
     document.getElementById('act1').innerText = d.act1;
     document.getElementById('act2').innerText = d.act2;
     document.getElementById('prevTitle').innerText = d.prev;
     document.getElementById('h3_group').innerText = d.group;
     document.getElementById('p_group').innerText = d.p_group;
+    document.getElementById('joinBtnText').innerHTML = `<i class="fab fa-whatsapp"></i> ` + d.join;
     document.getElementById('h3_share').innerText = d.share;
     document.getElementById('h3_feed').innerText = d.feed;
+    document.getElementById('f_name').placeholder = d.f_n;
+    document.getElementById('f_msg').placeholder = d.f_m;
+    document.getElementById('sBtnText').innerText = d.s_b;
     document.getElementById('pTitle').innerText = d.pt;
     document.getElementById('pText').innerText = d.ptx;
+    
     document.querySelectorAll('.l-btn').forEach(b => b.classList.remove('active'));
-    if(document.getElementById('l_'+l)) document.getElementById('l_'+l).classList.add('active');
+    const btn = document.getElementById('btn_' + l); if(btn) btn.classList.add('active');
     render();
 }
+
+let isEn = false;
+function toggleEnglishMode() { isEn = !isEn; changeMasterUI(isEn ? 'en' : 'ta'); }
 window.onload = init;
 </script> </body> </html>
