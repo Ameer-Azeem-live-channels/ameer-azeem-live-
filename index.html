@@ -3,74 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ameer Azeem Global - The Ultimate Media Gateway</title>
+    <title>Ameer Azeem Global - World Class Media Hub</title>
     
-    <!-- ✅ WHATSAPP/SOCIAL MEDIA POSTER PREVIEW -->
-    <meta property="og:title" content="Ameer Azeem Global Live - 7 Languages & 100+ Channels">
-    <meta property="og:description" content="தேடல் இனி வேண்டாம். ஒரே கிளிக்கில் நேரலை! இப்போதே அதிகாரப்பூர்வ ஆப்பை இன்ஸ்டால் செய்யுங்கள்.">
-    <meta property="og:image" content="assets/images/ameer%20azeem%20logo/logo.png.png">
+    <!-- ✅ SOCIAL MEDIA POSTER PREVIEW -->
+    <meta property="og:title" content="Ameer Azeem Global Live - 100+ Channels">
+    <meta property="og:description" content="7 Languages. 100+ Live Channels. Experience Global Media.">
+    <meta property="og:image" content="ameer azeem logo/logo.png.png">
     <meta property="og:url" content="https://ameer-azeem-live-channels.github.io/ameer-azeem-live-/">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #ef4444; --bg: #020617; --card: #111827; --accent: #0ea5e9; --fire: #ff4500; --success: #22c55e; }
+        :root { --primary: #ef4444; --bg: #000000; --card: #1c1c1e; --accent: #0071e3; --fire: #ff4500; --success: #22c55e; }
         * { box-sizing: border-box; transition: 0.3s; scroll-behavior: smooth; }
-        body { background-color: var(--bg); color: white; font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 0; text-align: center; overflow-x: hidden; }
+        body { background-color: var(--bg); color: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; text-align: center; overflow-x: hidden; }
         
-        /* Navbar */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; background: rgba(2, 6, 23, 0.9); backdrop-filter: blur(15px); position: fixed; width: 100%; top: 0; z-index: 2000; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .nav-brand { font-weight: 900; color: var(--primary); font-size: 14px; letter-spacing: 1px; }
+        /* Apple Style Navbar */
+        .navbar { background: rgba(0, 0, 0, 0.8); backdrop-filter: saturate(180%) blur(20px); padding: 15px 10%; position: fixed; width: 100%; top: 0; z-index: 2000; border-bottom: 1px solid #333; }
+        .nav-brand { font-weight: 600; font-size: 14px; color: #f5f5f7; letter-spacing: 1px; }
 
-        /* ✅ Auto Sliding Banners */
-        .slider-box { margin-top: 80px; width: 100%; height: 380px; overflow: hidden; position: relative; border-bottom: 4px solid var(--primary); }
+        /* ✅ Auto Sliding Banners (Fixed Path from Screenshot) */
+        .slider-box { margin-top: 50px; width: 100%; height: 400px; overflow: hidden; position: relative; }
         .slider { display: flex; width: 400%; height: 100%; transition: 1s cubic-bezier(0.4, 0, 0.2, 1); }
         .slide { width: 100%; height: 100%; flex-shrink: 0; background-size: cover; background-position: center; }
 
-        /* ✅ The Glossy & Fire Flash Logo Button (NO BOX / NO CIRCLE) */
-        .logo-zone { padding: 60px 5%; background: radial-gradient(circle, #1e1b4b 0%, #020617 100%); }
-        .logo-btn-wrap { position: relative; width: 220px; margin: 0 auto; cursor: pointer; display: block; text-decoration: none; }
-        .logo-main { width: 100%; z-index: 10; position: relative; animation: shine 3s infinite; border: none; border-radius: 0; }
-        @keyframes shine { 0%, 100% { filter: brightness(1) drop-shadow(0 0 5px white); } 50% { filter: brightness(1.4) drop-shadow(0 0 25px var(--primary)); } }
+        /* ✅ The Raw Glossy & Fire Flash Logo Button */
+        .logo-zone { padding: 80px 5% 40px; background: #000; }
+        .logo-wrap { position: relative; width: 200px; height: 200px; margin: 0 auto; cursor: pointer; display: block; text-decoration: none; }
+        .logo-main { width: 100%; z-index: 10; position: relative; animation: glossy-shine 3s infinite; }
+        @keyframes glossy-shine { 0%, 100% { filter: brightness(1) drop-shadow(0 0 5px white); } 50% { filter: brightness(1.4) drop-shadow(0 0 30px var(--primary)); } }
 
-        .fire-flash { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 100%; height: 100%; background: radial-gradient(circle, var(--fire) 0%, transparent 70%); border-radius: 50%; opacity: 0; pointer-events: none; }
-        .logo-btn-wrap:active .fire-flash { animation: burst 0.6s ease-out; }
-        @keyframes burst { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(4); opacity: 0; } }
+        /* Fire Flash Burst Effect */
+        .fire-flash { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 150%; height: 150%; background: radial-gradient(circle, var(--fire) 0%, transparent 70%); border-radius: 50%; opacity: 0; pointer-events: none; }
+        .logo-wrap:active .fire-flash { animation: fire-burst 0.6s ease-out; }
+        @keyframes fire-burst { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(4); opacity: 0; } }
 
-        .action-label { font-size: 28px; font-weight: 900; margin-top: 25px; color: white; letter-spacing: 2px; display: block; }
-        .sub-label { color: var(--accent); font-weight: bold; font-size: 13px; margin-top: 5px; }
+        .action-label { font-size: 28px; font-weight: 900; margin-top: 25px; color: white; letter-spacing: 2px; display: block; text-transform: uppercase; }
 
-        /* ✅ 7 Language Selection Bar */
-        .lang-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 20px; background: #0f172a; margin: 30px 5%; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); }
-        .l-btn { padding: 10px 20px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); background: transparent; color: white; cursor: pointer; font-weight: bold; font-size: 12px; }
-        .l-btn.active, .l-btn:hover { background: var(--accent); border-color: var(--accent); transform: scale(1.1); box-shadow: 0 0 20px rgba(14,165,233,0.4); }
+        /* Language Switcher Bar */
+        .lang-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 40px 10%; background: #000; }
+        .l-btn { padding: 10px 22px; border-radius: 20px; border: 1px solid #444; background: transparent; color: #a1a1a6; cursor: pointer; font-weight: 500; font-size: 13px; }
+        .l-btn.active, .l-btn:hover { background: #fff; color: #000; border-color: #fff; }
 
-        /* Master Player Stage */
-        .stage { max-width: 1050px; margin: 40px auto; padding: 30px; background: #000; border-radius: 40px; border: 1px solid #334155; box-shadow: 0 40px 100px rgba(0,0,0,0.9); }
-        .player-wrap { width: 100%; height: 550px; border-radius: 24px; overflow: hidden; background: #000; margin-bottom: 30px; border: 1px solid #1e293b; }
+        /* Master Showcase Player Stage */
+        .stage { max-width: 1050px; margin: 40px auto; padding: 30px; background: var(--card); border-radius: 40px; box-shadow: 0 40px 100px rgba(0,0,0,0.9); }
+        .player-wrap { width: 100%; height: 550px; border-radius: 24px; overflow: hidden; background: #000; margin-bottom: 30px; border: 1px solid #333; }
         iframe { width: 100%; height: 100%; border: none; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); gap: 15px; }
-        .card { background: var(--card); padding: 15px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); cursor: pointer; }
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3); }
+        .card { background: #2c2c2e; padding: 15px; border-radius: 24px; cursor: pointer; border: 1px solid transparent; }
+        .card:hover { border-color: var(--primary); transform: scale(1.08); background: #3a3a3c; }
         .card img { width: 100%; border-radius: 12px; height: 60px; object-fit: contain; }
-        .ch-name { font-size: 9px; font-weight: 900; color: #64748b; margin-top: 8px; text-transform: uppercase; }
+        .ch-name { font-size: 9px; font-weight: 700; color: #a1a1a6; margin-top: 10px; text-transform: uppercase; }
 
-        /* Community Hub */
-        .community-hub { padding: 60px 8%; background: #0f172a; border-radius: 40px; margin: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .hub-box { background: var(--card); padding: 35px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.05); text-align: left; }
-        .hub-box h3 { color: var(--accent); margin-bottom: 20px; }
-        .join-btn { background: var(--success); color: white; text-decoration: none; padding: 15px 30px; border-radius: 15px; display: inline-flex; align-items: center; gap: 10px; font-weight: 900; font-size: 15px; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
+        /* Community & Sharing */
+        .interact { padding: 60px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .box { background: var(--card); padding: 45px; border-radius: 40px; text-align: left; border: 1px solid #333; }
+        .box h3 { color: #fff; margin-bottom: 20px; }
+        input, textarea { width: 100%; padding: 18px; margin-bottom: 12px; border-radius: 12px; border: 1px solid #333; background: #000; color: #fff; font-size: 15px; }
+        .s-btn { background: var(--accent); color: white; border: none; padding: 18px; border-radius: 12px; font-weight: 700; width: 100%; cursor: pointer; }
 
-        .sh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
-        .sh-item { padding: 12px; border-radius: 12px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; }
+        .join-btn { background: var(--success); color: white; text-decoration: none; padding: 15px 30px; border-radius: 15px; display: inline-flex; align-items: center; gap: 10px; font-weight: 700; }
+
+        .sh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px; }
+        .sh-item { padding: 15px; border-radius: 15px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 14px; }
         .wa { background: #25d366; } .fb { background: #1877f2; }
 
-        /* Feedback Form */
-        input, textarea { width: 100%; padding: 15px; margin-bottom: 12px; border-radius: 12px; border: 1px solid #334155; background: #1e293b; color: white; font-size: 14px; }
-        .s-btn { background: var(--accent); color: white; border: none; padding: 15px; border-radius: 12px; font-weight: 900; width: 100%; cursor: pointer; }
-
-        .footer { padding: 80px 8%; background: #000; border-top: 1px solid rgba(255,255,255,0.1); }
-        .email-link { font-size: clamp(18px, 4vw, 32px); color: var(--primary); text-decoration: none; font-weight: 900; }
+        .footer { padding: 100px 8%; border-top: 1px solid #333; }
+        .email-link { color: var(--accent); text-decoration: none; font-size: 24px; font-weight: 700; }
 
         @media (max-width: 768px) { .player-wrap { height: 260px; } .slider-box { height: 200px; } .navbar { justify-content: center; } .nav-brand { display: none; } }
     </style>
@@ -79,158 +78,136 @@
 
 <nav class="navbar">
     <div class="nav-brand">AMEER AZEEM GLOBAL MEDIA</div>
-    <button class="lang-trigger" id="masterLangBtn" onclick="toggleLanguage()">English Mode</button>
 </nav>
 
+<!-- ✅ Top Banner Slider (Fixed Path to Root) -->
 <div class="slider-box">
     <div class="slider" id="mainSlider">
-        <div class="slide" style="background-image: url('assets/images/banner/banner1.png');"></div>
-        <div class="slide" style="background-image: url('assets/images/banner/banner2.png');"></div>
-        <div class="slide" style="background-image: url('assets/images/banner/banner3.png');"></div>
-        <div class="slide" style="background-image: url('assets/images/banner/banner4.png');"></div>
+        <div class="slide" style="background-image: url('banner1.png');"></div>
+        <div class="slide" style="background-image: url('banner2.png');"></div>
+        <div class="slide" style="background-image: url('banner3.png');"></div>
+        <div class="slide" style="background-image: url('banner4.png');"></div>
     </div>
 </div>
 
 <section class="logo-zone">
-    <!-- ✅ CLICK ORIGINAL LOGO FOR FIRE BURST & AUTO APK DOWNLOAD -->
-    <a href="app-release.apk" class="logo-btn-wrap">
+    <!-- ✅ CLICK LOGO FOR FIRE BURST & AUTO APK DOWNLOAD -->
+    <a href="app-release.apk" class="logo-wrap" id="logoLink">
         <div class="fire-flash"></div>
-        <img src="assets/images/ameer azeem logo/logo.png.png" class="logo-main" alt="Original Logo">
+        <img src="ameer azeem logo/logo.png.png" class="logo-main" onerror="this.src='logo.png.png'" alt="Ameer Azeem Logo">
     </a>
     <div class="action-label" id="act1">APP DOWNLOAD</div>
-    <div class="action-label" id="act2">APP INSTALL</div>
-    <div class="sub-label">NO REGISTRATION REQUIRED • SECURE ACCESS</div>
+    <div class="action-label" id="act2" style="margin-top: 5px;">APP INSTALL</div>
 </section>
 
-<!-- ✅ 7 Language Selection Bar -->
+<!-- ✅ 7 Language Selection Bar (Fixed Logic) -->
 <div class="lang-bar">
-    <button class="l-btn active" id="l_ta" onclick="changeLang('ta')">தமிழ்</button>
+    <button class="l-btn active" id="l_ta" onclick="changeLang('ta')">தமிழ் (Tamil)</button>
     <button class="l-btn" id="l_en" onclick="changeLang('en')">English</button>
-    <button class="l-btn" id="l_ar" onclick="changeLang('ar')">العربية</button>
-    <button class="l-btn" id="l_hi" onclick="changeLang('hi')">हिन्दी</button>
-    <button class="l-btn" id="l_ml" onclick="changeLang('ml')">മലയാളം</button>
-    <button class="l-btn" id="l_te" onclick="changeLang('te')">తెలుగు</button>
-    <button class="l-btn" id="l_kn" onclick="changeLang('kn')">ಕನ್ನಡ</button>
+    <button class="l-btn" id="l_ar" onclick="changeLang('ar')">العربية (Arabic)</button>
+    <button class="l-btn" id="l_hi" onclick="changeLang('hi')">हिन्दी (Hindi)</button>
+    <button class="l-btn" id="l_ml" onclick="changeLang('ml')">മലയാളം (Malayalam)</button>
+    <button class="l-btn" id="l_te" onclick="changeLang('te')">తెలుగు (Telugu)</button>
+    <button class="l-btn" id="l_kn" onclick="changeLang('kn')">ಕನ್ನಡ (Kannada)</button>
 </div>
 
+<!-- ✅ Master Stage Player -->
 <div class="stage">
-    <h2 id="prevTitle" style="color: var(--primary); margin-top: 0; letter-spacing: 2px;">LIVE SHOWCASE (நேரலை மாதிரி)</h2>
+    <h2 id="prevTitle" style="color: #fff; margin-top: 0; font-weight: 400; letter-spacing: 2px;">LIVE SHOWCASE (நேரலை மாதிரி)</h2>
     <div class="player-wrap">
         <iframe id="vid" src="https://www.youtube.com/embed/9M02G5c6x6w?autoplay=1&origin=https://ameer-azeem-live-channels.github.io" allowfullscreen></iframe>
     </div>
-    
     <div class="grid" id="channelGrid"></div>
-    <p id="moreText" style="margin-top:30px; font-weight:bold; color:#64748b;">Install our official app to watch all 100+ Channels!</p>
 </div>
 
-<section class="community-hub">
-    <div class="hub-box">
+<!-- ✅ Community Hub -->
+<section class="interact">
+    <div class="box">
         <h3 id="h3_group">வாட்ஸ்அப் குழு</h3>
-        <p style="color:#94a3b8; font-size:14px;">உடனுக்குடன் செய்திகளைப் பெற எம்முடன் இணையுங்கள்.</p>
+        <p style="color:#a1a1a6; font-size:14px; margin-bottom: 20px;">நேரடி அப்டேட்டுகளைப் பெற எமது அதிகாரப்பூர்வ வாட்ஸ்அப் குழுவில் இப்போதே இணையுங்கள்.</p>
         <a href="https://chat.whatsapp.com/YOUR_GROUP_LINK" class="join-btn" target="_blank"><i class="fab fa-whatsapp"></i> JOIN GROUP </a>
     </div>
-    <div class="hub-box">
+    <div class="box">
         <h3 id="h3_share">நண்பர்களுக்குப் பகிருங்கள்</h3>
         <div class="sh-grid">
-            <a href="https://api.whatsapp.com/send?text=Ameer Azeem Live App: https://ameer-azeem-live-channels.github.io/ameer-azeem-live-/" class="sh-item wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://api.whatsapp.com/send?text=Check out Ameer Azeem Live App!" class="sh-item wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://ameer-azeem-live-channels.github.io/ameer-azeem-live-/" class="sh-item fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         </div>
     </div>
-    <div class="hub-box">
+    <div class="box">
         <h3 id="h3_feed">உங்கள் கருத்துக்கள் (Feedback)</h3>
         <form action="mailto:jahanshathik@gmail.com" method="post" enctype="text/plain">
-            <input type="text" placeholder="Name" required>
-            <textarea rows="3" placeholder="Message/Suggestions"></textarea>
+            <input type="text" placeholder="Name" required style="width:100%; padding:15px; background:#000; color:#fff; border:1px solid #333; border-radius:12px; margin-bottom:10px;">
+            <textarea rows="3" placeholder="Message/Suggestions" style="width:100%; padding:15px; background:#000; color:#fff; border:1px solid #333; border-radius:12px; margin-bottom:10px;"></textarea>
             <button type="submit" class="s-btn">SUBMIT</button>
         </form>
     </div>
 </section>
 
 <footer class="footer">
-    <h2 id="pTitle" style="color:var(--accent);"><i class="fas fa-shield-alt"></i> உத்தியோகபூர்வ ஊடகக் கொள்கை</h2>
-    <p style="color: #cbd5e1; max-width:800px; margin: 20px auto;">அமீர் அஜீம் குளோபல் ஒரு டிஜிட்டல் ஊடகத் தொகுப்பாளர் மட்டுமே. நாங்கள் எந்த வீடியோவையும் எமது சர்வரில் சேமிக்கவில்லை. 100% வருமானம் உரிமையாளர்களுக்கே நேரடியாகச் சென்றடையும்.</p>
+    <h2 id="pTitle" style="color:var(--accent); font-weight: 400;">உத்தியோகபூர்வ ஊடகக் கொள்கை</h2>
+    <p style="color: #a1a1a6; max-width:800px; margin: 20px auto;">அமீர் அஜீம் குளோபல் ஒரு டிஜிட்டல் ஊடகத் தொகுப்பாளர் மட்டுமே. 100% வருமானம் உரிமையாளர்களுக்கே நேரடியாகச் சென்றடையும்.</p>
     <a href="mailto:jahanshathik@gmail.com" class="email-link">jahanshathik@gmail.com</a>
 </footer>
 
 <script>
     const GIST = "https://gist.githubusercontent.com/Ameer-Azeem-live-channels/41a0c696f5fb2cb0385390afab22dc7b/raw/channels.json";
-    const IMG_BASE = "https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-channels/main/assets/images/";
-
-    const translations = {
-        ta: { h1: "அமீர் அஜீம் குளோபல் - நேரலை மையம்", dl: "English Mode", prev: "நேரலை மாதிரி", group: "வாட்ஸ்அப் குழு", share: "நண்பர்களுக்குப் பகிருங்கள்", feed: "உங்கள் கருத்துக்கள்", act1: "APP DOWNLOAD", act2: "APP INSTALL", more: "100+ சேனல்களைப் பார்க்க ஆப்பை இன்ஸ்டால் செய்யுங்கள்!" },
-        en: { h1: "Ameer Azeem Global - Live Hub", dl: "தமிழ் பதிப்பு", prev: "LIVE SHOWCASE", group: "Official WhatsApp Group", share: "Share with Friends", feed: "Private Feedback", act1: "APP DOWNLOAD", act2: "APP INSTALL", more: "Install the app to watch all 100+ channels!" },
-        ar: { h1: "أمير عظيم العالمي", dl: "தமிழ் பதிப்பு", prev: "عرض مباشر", group: "مجموعة واتساب", share: "شارك مع الأصدقاء", feed: "تعليقات الخاصة", act1: "تحميل", act2: "تثبيت", more: "قم بتثبيت التطبيق لمشاهدة جميع القنوات!" },
-        hi: { h1: "अमीर अज़ीम ग्लोबल", dl: "தமிழ் பதிப்பு", prev: "लाइव शोकेस", group: "व्हाट्सएप ग्रुप", share: "साझा करें", feed: "प्रतिक्रिया", act1: "डाउनलोड", act2: "स्थापना", more: "सभी चैनल देखने के लिए ऐप इंस्टॉल करें!" },
-        ml: { h1: "അമീർ അസീം ഗ്ലോബൽ", dl: "தமிழ் பதிப்பு", prev: "തത്സമയ പ്രിവ്യൂ", group: "വാട്ട്‌സ്ആപ്പ് ഗ്രൂപ്പ്", share: "പങ്കിടുക", feed: "അഭിപ്രായങ്ങൾ", act1: "ഡൗൺലോഡ്", act2: "ഇൻസ്റ്റാൾ", more: "എല്ലാ ചാനലുകളും കാണാൻ ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്യുക!" },
-        te: { h1: "అమీర్ అజీమ్ గ్లోబల్", dl: "தமிழ் பதிப்பு", prev: "లైవ్ ప్రివ్యూ", group: "వాట్సాప్ గ్రూప్", share: "షేర్ చేయండి", feed: "అభిప్రాయం", act1: "డౌన్లోడ్", act2: "ఇన్‌స్టాల్", more: "అన్ని ఛానెల్‌లను చూడటానికి యాప్‌ను ఇన్‌స్టాల్ చేయండి!" },
-        kn: { h1: "ಅಮೀರ್ ಅಸೀಮ್ ಗ್ಲೋಬಲ್", dl: "தமிழ் பதிப்பு", prev: "ತತ್ಸಮಯ ಪ್ರಿವ್ಯೂ", group: "ವಾಟ್ಸಾಪ್ ಗ್ರೂಪ್", share: "ಹಂಚಿಕೊಳ್ಳಿ", feed: "ಅಭಿಪ್ರಾಯ", act1: "ಡೌನ್ಲೋಡ್", act2: "ಸ್ಥಾಪಿಸಿ", more: "ಎಲ್ಲಾ ಚಾನಲ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಲು ಅಪ್ಲಿಕೇಶನ್ ಸ್ಥಾಪಿಸಿ!" }
+    
+    // ✅ Translation Data
+    const trans = {
+        ta: { h1: "அமீர் அஜீம் நேரலை", act1: "APP DOWNLOAD", act2: "APP INSTALL", prev: "நேரலை மாதிரி", group: "வாட்ஸ்அப் குழு", share: "பகிருங்கள்", feed: "உங்கள் கருத்துக்கள்" },
+        en: { h1: "Ameer Azeem Live", act1: "APP DOWNLOAD", act2: "APP INSTALL", prev: "LIVE SHOWCASE", group: "WhatsApp Community", share: "Share Now", feed: "Feedback" },
+        ar: { h1: "أمير عظيم مباشر", act1: "تحميل التطبيق", act2: "تثبيت التطبيق", prev: "عرض مباشر", group: "مجموعة واتساب", share: "شارك الآن", feed: "تعليقات" }
     };
 
-    const channelData = {
-        ta: { folder: "tamilchannels/", list: [
-            {n:"SUN NEWS", i:"sun-news.png.png", id:"UCYlh4lH762HvHt6mmiecyWQ"},
-            {n:"POLIMER", i:"polimer-news.png.png", id:"UC8Z-VjXBtDJTvq6aqkIskPg"},
-            {n:"THANTHI TV", i:"news-thanthi.png.png", id:"UC-JFyL0zDFOsPMpuWu39rPA"},
-            {n:"NEWS 7", i:"news-seven.png.png", id:"UCGyZswzm4G-wEfRQHgMSAuw"},
-            {n:"NEWS 18", i:"tamilnadu-news18.png.png", id:"UCat88i6_rELqI_prwvjspRA"},
-            {n:"SATHIYAM", i:"sathiya-news.png.png", id:"UC2ziCMHFPWkFHjocUMXT__Q"},
-            {n:"JAYA PLUS", i:"jayapluse-news.png.png", id:"UCOP4Gbw-T1ofcW8vyL89ZDw"},
-            {n:"KALAIGNAR", i:"kalaigar- news.png.png", id:"UCcVF2Fth-qEA4T1Lhn3CgKg"},
-            {n:"MALAIMURASU", i:"malaimurasu-news.png.png", id:"UCXbufH95DIUqyAWSzeDI0JQ"},
-            {n:"TAMIL NEWS", i:"tamil-news.png.png", id:"UCtbo6_eDG7zEtaOtcSltJkA"},
-            {n:"PUTHIYA THALAIMURAI", i:"puthiya-thalaimurai-news.png.png", id:"UCmyKnNRH0wH-r8I-ceP-dsg"}
-        ] },
-        en: { folder: "englishchannels/", list: [{n:"AL JAZEERA", i:"al-Jazeera-english.png.png", id:"UCNye-wNBqNL5ZzHSJj3l8Bg"}] },
-        ar: { folder: "arabicchannels/", list: [{n:"AL ARABIYA", i:"al-arabiya-news.png.png", id:"UCahpxixMCwoANA7VsqnshU"}] },
-        hi: { folder: "hindichannels/", list: [{n:"AAJ TAK", i:"aaj-tak-hindi-news.png.png", id:"UCt9X-N6Xv_pndS_S_v5v9zA"}] },
-        ml: { folder: "malayalamchannels/", list: [{n:"ASIANET NEWS", i:"asianet-news.png.png", id:"UC-T0KswVw9SAnI3Wj-7v7Yg"}] },
-        te: { folder: "teluguchannels/", list: [{n:"TV9 TELUGU", i:"tv9-telugu-news.png", id:"UC0m_VvY8u_996_m39Lp_V_IA"}] },
-        kn: { folder: "kannadachannels/", list: [{n:"TV9 KANNADA", i:"tv9-kanada-news.png.png", id:"UC48ELyBArvT2g8FpA555lIA"}] }
+    // ✅ Master Channel List (Fixed Paths for GitHub Root)
+    const channels = {
+        ta: [{n:"SUN NEWS", i:"tamilchannels/sun-news.png.png", id:"UCYlh4lH762HvHt6mmiecyWQ"}, {n:"POLIMER", i:"tamilchannels/polimer-news.png.png", id:"UC8Z-VjXBtDJTvq6aqkIskPg"}, {n:"THANTHI TV", i:"tamilchannels/news-thanthi.png.png", id:"UC-JFyL0zDFOsPMpuWu39rPA"}, {n:"NEWS 7", i:"tamilchannels/news-seven.png.png", id:"UCGyZswzm4G-wEfRQHgMSAuw"}, {n:"NEWS 18", i:"tamilchannels/tamilnadu-news18.png.png", id:"UCat88i6_rELqI_prwvjspRA"}, {n:"SATHIYAM", i:"tamilchannels/sathiya-news.png.png", id:"UC2ziCMHFPWkFHjocUMXT__Q"}],
+        en: [{n:"AL JAZEERA", i:"al-Jazeera-english.png.png", id:"UCNye-wNBqNL5ZzHSJj3l8Bg"}],
+        ar: [{n:"AL ARABIYA", i:"al-arabiya-news.png.png", id:"UCahpxixMCwoANA7VsqnshU"}],
+        hi: [{n:"AAJ TAK", i:"aaj-tak-hindi-news.png.png", id:"UCt9X-N6Xv_pndS_S_v5v9zA"}],
+        ml: [{n:"ASIANET NEWS", i:"asianet-news.png.png", id:"UC-T0KswVw9SAnI3Wj-7v7Yg"}],
+        te: [{n:"TV9 TELUGU", i:"tv9-telugu-news.png", id:"UC0m_VvY8u_996_m39Lp_V_IA"}],
+        kn: [{n:"TV9 KANNADA", i:"tv9-kanada-news.png.png", id:"UC48ELyBArvT2g8FpA555lIA"}]
     };
 
-    let curLang = 'ta'; let gistData = {};
-    let sIdx = 0; setInterval(() => { sIdx = (sIdx + 1) % 4; document.getElementById('mainSlider').style.transform = `translateX(-${sIdx * 100}%)`; }, 4500);
+    let curL = 'ta'; let gCache = {};
+    let sIdx = 0; setInterval(() => { sIdx = (sIdx + 1) % 4; document.getElementById('mainSlider').style.transform = `translateX(-${sIdx * 100}%)`; }, 5000);
 
     async function init() {
-        try { const res = await fetch(GIST + "?t=" + Date.now()); gistData = await res.json(); } catch (e) {}
-        renderGrid();
+        try { const r = await fetch(GIST + "?t=" + Date.now()); gCache = await r.json(); } catch(e) {}
+        render();
     }
 
-    function renderGrid() {
+    function render() {
         const grid = document.getElementById('channelGrid');
-        const data = channelData[curLang] || channelData['ta'];
+        const data = channels[curL] || channels['ta'];
         grid.innerHTML = "";
-        data.list.forEach(c => {
-            const vidId = gistData[c.i] || c.id;
-            grid.innerHTML += `<div class="card" onclick="play('${vidId}')">
-                <img src="${IMG_BASE}${data.folder}${c.i}" onerror="this.src='assets/images/ameer azeem logo/logo.png.png'">
+        data.forEach(c => {
+            const vid = gCache[c.i.split('/').pop()] || c.id;
+            grid.innerHTML += `<div class="card" onclick="play('${vid}')">
+                <img src="${c.i}" onerror="this.src='ameer azeem logo/logo.png.png'">
                 <div class="ch-name">${c.n}</div>
             </div>`;
         });
     }
 
     function play(id) {
-        let url = id.length === 11 ? "https://www.youtube.com/embed/"+id : "https://www.youtube.com/embed/live_stream?channel="+id;
-        document.getElementById('vid').src = url + "?autoplay=1&origin=https://ameer-azeem-live-channels.github.io";
+        document.getElementById('vid').src = "https://www.youtube.com/embed/live_stream?channel="+id+"&autoplay=1&origin=https://ameer-azeem-live-channels.github.io";
         window.scrollTo({top: 450, behavior: 'smooth'});
     }
 
-    let isEn = false;
-    function toggleLanguage() { isEn = !isEn; changeLang(isEn ? 'en' : 'ta'); }
     function changeLang(l) {
-        curLang = l; const d = translations[l] || translations['ta'];
-        document.getElementById('masterLangBtn').innerText = d.dl;
-        document.getElementById('h1').innerText = d.h1;
+        curL = l; const d = trans[l] || trans['en'];
+        document.getElementById('act1').innerText = d.act1;
+        document.getElementById('act2').innerText = d.act2;
         document.getElementById('prevTitle').innerText = d.prev;
         document.getElementById('h3_group').innerText = d.group;
         document.getElementById('h3_share').innerText = d.share;
         document.getElementById('h3_feed').innerText = d.feed;
-        document.getElementById('act1').innerText = d.act1;
-        document.getElementById('act2').innerText = d.act2;
-        document.getElementById('moreText').innerText = d.more;
         document.querySelectorAll('.l-btn').forEach(b => b.classList.remove('active'));
-        if(document.getElementById('l_'+l)) document.getElementById('l_'+l).classList.add('active');
-        renderGrid();
+        const btn = document.getElementById('l_'+l); if(btn) btn.classList.add('active');
+        render();
     }
     window.onload = init;
 </script>
