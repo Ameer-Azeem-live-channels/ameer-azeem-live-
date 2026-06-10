@@ -1,111 +1,42 @@
-<!DOCTYPE html> <html lang="ta"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Ameer Azeem Global - World Class Media Gateway</title>
-<meta property="og:title" content="Ameer Azeem Live - 7 Languages & 100+ Channels">
-<meta property="og:image" content="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/logo.png.png">
-<meta property="og:url" content="https://ameer-azeem-live-channels.github.io/ameer-azeem-live-/">
-
+<!DOCTYPE html> <html lang="ta"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Ameer Azeem Global Media</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
     :root { --primary: #ef4444; --bg: #000; --card: #1c1c1e; --accent: #0071e3; --fire: #ff4500; }
-    * { box-sizing: border-box; transition: 0.3s; scroll-behavior: smooth; }
-    body { background-color: var(--bg); color: #f5f5f7; font-family: -apple-system, system-ui, sans-serif; margin: 0; padding: 0; text-align: center; }
+    body { background-color: var(--bg); color: #fff; font-family: -apple-system, sans-serif; text-align: center; margin: 0; }
+    .navbar { padding: 15px; border-bottom: 1px solid #333; background: rgba(0,0,0,0.8); position: fixed; width:100%; top:0; z-index:1000; }
+    .banner { margin-top: 50px; width: 100%; height: 400px; background: url('banner2.png') center/cover; }
     
-    .navbar { background: rgba(0, 0, 0, 0.85); backdrop-filter: saturate(180%) blur(20px); padding: 15px 10%; position: fixed; width: 100%; top: 0; z-index: 2000; border-bottom: 1px solid #333; }
-    .nav-brand { font-weight: 700; font-size: 16px; color: #fff; letter-spacing: 1px; width: 100%; text-align: center; }
-
-    /* ✅ Balanced Cinematic Static Banner */
-    .banner-hero { margin-top: 50px; width: 100%; height: 400px; background: url('banner2.png') no-repeat center center; background-size: cover; border-bottom: 3px solid #333; background-color: #000; }
-    @media (max-width: 768px) { .banner-hero { height: 220px; } }
-
-    /* ✅ Raw Large Logo & Fire Burst Section */
-    .logo-zone { padding: 40px 5% 40px; background: #000; }
-    .logo-wrap { position: relative; width: 250px; height: 250px; margin: 0 auto; cursor: pointer; display: block; text-decoration: none; }
-    .logo-main { width: 100%; z-index: 10; position: relative; animation: glossy-shine 3s infinite; }
-    @keyframes glossy-shine { 0%, 100% { filter: brightness(1) drop-shadow(0 0 10px white); } 50% { filter: brightness(1.4) drop-shadow(0 0 40px var(--primary)); } }
-
-    .fire-flash { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 180%; height: 180%; background: radial-gradient(circle, var(--fire) 0%, transparent 70%); border-radius: 50%; opacity: 0; pointer-events: none; }
-    .logo-wrap:active .fire-flash { animation: burst 0.5s ease-out; }
-    @keyframes burst { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(4); opacity: 0; } }
-
-    .action-label { font-size: 24px; font-weight: 900; margin-top: 25px; color: white; letter-spacing: 1.5px; text-transform: uppercase; }
-    .sub-label { color: var(--accent); font-weight: 600; font-size: 15px; margin-top: 8px; text-transform: uppercase; }
-
-    /* ✅ 7 Language Control Bar */
-    .lang-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 40px 5%; background: #000; }
-    .l-btn { padding: 12px 22px; border-radius: 30px; border: 1px solid #444; background: transparent; color: #a1a1a6; cursor: pointer; font-weight: 600; font-size: 13px; }
-    .l-btn.active, .l-btn:hover { background: #fff; color: #000; border-color: #fff; transform: scale(1.1); }
-
-    .stage { max-width: 1050px; margin: 40px auto; padding: 25px; background: #1c1c1e; border-radius: 45px; box-shadow: 0 40px 100px rgba(0,0,0,0.9); }
-    .player-wrap { width: 100%; height: 550px; border-radius: 25px; overflow: hidden; background: #000; margin-bottom: 35px; border: 1px solid #333; }
-    iframe { width: 100%; height: 100%; border: none; }
+    /* ✅ Logo Zone with Download Link */
+    .logo-zone { padding: 40px; }
+    .logo-wrap { display: block; width: 230px; margin: 0 auto; text-decoration: none; position: relative; }
+    .logo-main { width: 100%; filter: drop-shadow(0 0 10px #fff); animation: shine 3s infinite; }
+    @keyframes shine { 50% { filter: brightness(1.4) drop-shadow(0 0 30px var(--primary)); } }
     
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 20px; }
-    .card { background: #2c2c2e; padding: 20px; border-radius: 25px; cursor: pointer; border: 1px solid transparent; }
-    .card:hover { border-color: var(--primary); transform: scale(1.08); background: #3a3a3c; }
-    .card img { width: 100%; border-radius: 12px; height: 75px; object-fit: contain; }
-    .ch-name { font-size: 10px; font-weight: 800; color: #a1a1a6; margin-top: 10px; text-transform: uppercase; }
+    .lang-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 20px; }
+    .l-btn { padding: 10px 20px; border-radius: 20px; border: 1px solid #444; background: none; color: #aaa; cursor: pointer; }
+    .l-btn.active { background: #fff; color: #000; }
 
-    .footer { padding: 100px 8%; border-top: 1px solid #333; }
-    @media (max-width: 768px) { .player-wrap { height: 260px; .navbar { justify-content: center; } .nav-brand { display: none; } }
+    .stage { max-width: 1000px; margin: 40px auto; padding: 20px; background: #1c1c1e; border-radius: 40px; }
+    .player { width: 100%; height: 500px; border-radius: 20px; overflow: hidden; background: #000; margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; }
+    .card { background: #2c2c2e; padding: 15px; border-radius: 20px; cursor: pointer; }
+    .card img { width: 100%; height: 60px; object-fit: contain; }
 </style>
 </head> <body>
-<nav class="navbar"> <div class="nav-brand" id="navBrand">AMEER AZEEM GLOBAL MEDIA</div> </nav>
-<div class="banner-hero"></div>
-<section class="logo-zone"> <!-- ✅ FIXED APK DOWNLOAD LINK (Pointing to Releases) --> <a href="https://github.com/Ameer-Azeem-live-channels/ameer-azeem-live-/releases/download/v1.0/app-release.apk" class="logo-wrap" id="logoLink"> <div class="fire-flash"></div> <img src="logo.png.png" class="logo-main" id="logoImg" onerror="this.src='https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/logo.png.png'"> </a> <div class="action-label" id="act1">CLICK LOGO</div> <div class="sub-label" id="act2">DOWNLOAD APP & INSTALL</div> </section>
-<!-- ✅ 7 Language Control Bar --> <div class="lang-bar"> <button class="l-btn active" id="btn_ta" onclick="changeGlobalUI('ta')">Tamil</button> <button class="l-btn" id="btn_en" onclick="changeGlobalUI('en')">English</button> <button class="l-btn" id="btn_ar" onclick="changeGlobalUI('ar')">Arabic</button> <button class="l-btn" id="btn_hi" onclick="changeGlobalUI('hi')">Hindi</button> <button class="l-btn" id="btn_ml" onclick="changeGlobalUI('ml')">Malayalam</button> <button class="l-btn" id="btn_te" onclick="changeGlobalUI('te')">Telugu</button> <button class="l-btn" id="btn_kn" onclick="changeGlobalUI('kn')">Kannada</button> </div>
-<div class="stage"> <h2 id="prevTitle" style="font-weight: 400; letter-spacing: 2px;">நேரலை மாதிரி</h2> <div class="player-wrap"> <iframe id="vid" src="https://www.youtube.com/embed/9M02G5c6x6w?autoplay=1&origin=https://ameer-azeem-live-channels.github.io" allowfullscreen></iframe> </div> <div class="grid" id="channelGrid"></div> </div>
-<footer class="footer"> <h2 id="pTitle" style="color:var(--accent); font-weight: 400;">YouTube Aggregator Policy</h2> <p id="pText" style="color: #a1a1a6; max-width:800px; margin: 20px auto;">நாங்கள் ஒரு டிஜிட்டல் ஊடகத் தொகுப்பாளர் மட்டுமே. 100% வருமானம் உரிமையாளர்களுக்கே நேரடியாகச் சென்றடையும்.</p> </footer>
-<script> const GIST = "https://gist.githubusercontent.com/Ameer-Azeem-live-channels/41a0c696f5fb2cb0385390afab22dc7b/raw/channels.json";
-// ✅ Complete 7-Language Database
-const masterData = {
-    ta: { nav: "அமீர் அஜீம் குளோபல் மீடியா", act1: "லோகோவை அழுத்தவும்", act2: "ஆப் டவுன்லோட் & இன்ஸ்டால்", prev: "நேரலை மாதிரி", pt: "யூடியூப் அக்ரிகேட்டர் கொள்கை", ptx: "நாங்கள் ஒரு டிஜிட்டல் ஊடகத் தொகுப்பாளர் மட்டுமே." },
-    en: { nav: "AMEER AZEEM GLOBAL MEDIA", act1: "CLICK LOGO", act2: "DOWNLOAD APP & INSTALL", prev: "LIVE SHOWCASE", pt: "YouTube Policy", ptx: "We are a digital media aggregator." },
-    ar: { nav: "أمير عظيم العالمية", act1: "اضغط على الشعار", act2: "تحميل وتثبيت", prev: "عرض مباشر", pt: "سياسة یوتوب", ptx: "نحن مجمع وسائط رقمیة." },
-    hi: { nav: "अमीर अज़ीम ग्लोबल", act1: "लोगो पर क्लिक करें", act2: "ऐप इंस्टॉल करें", prev: "लाइव शोकेस", pt: "यूट्यूब नीति", ptx: "हम डिजिटल मीडिया एग्रीगेटर हैं।" },
-    ml: { nav: "അമീർ അസീം ഗ്ലോബൽ", act1: "ലോഗോ ക്ലിക്ക് ചെയ്യുക", act2: "ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്യുക", prev: "തത്സമയ പ്രിവ്യൂ", pt: "നയം", ptx: "ഞങ്ങൾ ஒரு മീഡിയ அக்ரிகேட்டர்." },
-    te: { nav: "అమీర్ అజీమ్ గ్లోబల్", act1: "లోగోపై క్లిக் చేయండి", act2: "యాప్ ఇన్‌స్టాల్", prev: "లైవ్ ప్రివ్యూ", pt: "విధానం", ptx: "మేము அக்ரிகேட்டர் மட்டுமே." },
-    kn: { nav: "ಅಮೀರ್ ಅಸೀಮ್ ಗ್ಲೋಬಲ್", act1: "ಲೋಗೋ ಕ್ಲಿಕ್ ಮಾಡಿ", act2: "ಸ್ಥಾಪಿಸಿ", prev: "ತತ್ಸಮಯ ಪ್ರಿವ್ಯೂ", pt: "ನೀதி", ptx: "நாவு கவல அகிரிவேட்டர்." }
-};
-
-const channelData = {
-    ta: [{n:"SUN NEWS", i:"sun-news.png.png", id:"UCYlh4lH762HvHt6mmiecyWQ"}, {n:"POLIMER", i:"polimer-news.png.png", id:"UC8Z-VjXBtDJTvq6aqkIskPg"}, {n:"THANTHI TV", i:"news-thanthi.png.png", id:"UC-JFyL0zDFOsPMpuWu39rPA"}, {n:"NEWS 7", i:"news-seven.png.png", id:"UCGyZswzm4G-wEfRQHgMSAuw"}, {n:"NEWS 18", i:"tamilnadu-news18.png.png", id:"UCat88i6_rELqI_prwvjspRA"}, {n:"SATHIYAM", i:"sathiya-news.png.png", id:"UC2ziCMHFPWkFHjocUMXT__Q"}, {n:"JAYA PLUS", i:"jayapluse-news.png.png", id:"UCOP4Gbw-T1ofcW8vyL89ZDw"}, {n:"KALAIGNAR", i:"kalaigar- news.png.png", id:"UCcVF2Fth-qEA4T1Lhn3CgKg"}, {n:"MALAIMURASU", i:"malaimurasu-news.png.png", id:"UCXbufH95DIUqyAWSzeDI0JQ"}, {n:"TAMIL NEWS", i:"tamil-news.png.png", id:"UCtbo6_eDG7zEtaOtcSltJkA"}, {n:"PUTHIYA THALAIMURAI", i:"puthiya-thalaimurai-news.png.png", id:"UCmyKnNRH0wH-r8I-ceP-dsg"}],
-    en: [{n:"AL JAZEERA", i:"al-Jazeera-english.png.png", id:"UCNye-wNBqNL5ZzHSJj3l8Bg"}, {n:"SKY NEWS", i:"Sky-news-english.png.png", id:"UC7E-C2vH6SIn2vXU_p5_fFw"}],
-    ar: [{n:"AL ARABIYA", i:"al-arabiya-news.png.png", id:"UCahpxixMCwoANA7VsqnshU"}],
-    hi: [{n:"AAJ TAK", i:"aaj-tak-hindi-news.png.png", id:"UCt9X-N6Xv_pndS_S_v5v9zA"}],
-    ml: [{n:"ASIANET NEWS", i:"asianet-news.png.png", id:"UC-T0KswVw9SAnI3Wj-7v7Yg"}],
-    te: [{n:"TV9 TELUGU", i:"tv9-telugu-news.png", id:"UC0m_VvY8u_996_m39Lp_V_IA"}],
-    kn: [{n:"TV9 KANNADA", i:"tv9-kanada-news.png.png", id:"UC48ELyBArvT2g8FpA555lIA"}]
-};
-
-let curL = 'ta'; let gCache = {};
-async function init() { try { const r = await fetch(GIST + "?t=" + Date.now()); gCache = await r.json(); } catch(e) {} renderGrid(); }
-
-function renderGrid() {
-    const grid = document.getElementById('channelGrid');
-    const data = channelData[curL] || channelData['ta'];
-    grid.innerHTML = "";
-    data.forEach(c => {
-        const vid = gCache[c.i] || c.id;
-        grid.innerHTML += `<div class="card" onclick="play('${vid}')"><img src="${c.i}" onerror="this.src='logo.png.png'"><div class="ch-name">${c.n}</div></div>`;
+<nav class="navbar">AMEER AZEEM GLOBAL MEDIA</nav> <div class="banner"></div>
+<section class="logo-zone"> <!-- ✅ This Link will automatically download your 80MB APK --> <a href="https://github.com/Ameer-Azeem-live-channels/ameer-azeem-live-/releases/download/v1.0/app-release.apk" class="logo-wrap"> <img src="logo.png.png" class="logo-main"> <div style="margin-top:20px; font-weight:900; font-size:24px;">CLICK TO DOWNLOAD APP</div> </a> </section>
+<div class="lang-bar"> <button class="l-btn active" onclick="changeL('ta')">Tamil</button> <button class="l-btn" onclick="changeL('en')">English</button> <button class="l-btn" onclick="changeL('hi')">Hindi</button> </div>
+<div class="stage"> <div class="player"> <iframe id="vid" src="https://www.youtube.com/embed/9M02G5c6x6w?autoplay=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe> </div> <div class="grid" id="grid"></div> </div>
+<script> const GIST = "https://gist.githubusercontent.com/Ameer-Azeem-live-channels/41a0c696f5fb2cb0385390afab22dc7b/raw/channels.json"; const channels = { ta: [{n:"SUN NEWS", i:"sun-news.png.png", id:"UCYlh4lH762HvHt6mmiecyWQ"}, {n:"POLIMER", i:"polimer-news.png.png", id:"UC8Z-VjXBtDJTvq6aqkIskPg"}], en: [{n:"AL JAZEERA", i:"al-Jazeera-english.png.png", id:"UCNye-wNBqNL5ZzHSJj3l8Bg"}] }; let cur = 'ta'; let cache = {};
+async function init() { try { const r = await fetch(GIST); cache = await r.json(); } catch(e){} render(); }
+function render() {
+    const g = document.getElementById('grid'); g.innerHTML = "";
+    channels[cur].forEach(c => {
+        const id = cache[c.i] || c.id;
+        g.innerHTML += `<div class="card" onclick="play('${id}')"><img src="${c.i}"><p>${c.n}</p></div>`;
     });
 }
-
-function play(id) {
-    let u = id.length === 11 ? "https://www.youtube.com/embed/"+id : "https://www.youtube.com/embed/live_stream?channel="+id;
-    document.getElementById('vid').src = u + "?autoplay=1";
-    window.scrollTo({top: 450, behavior: 'smooth'});
-}
-
-function changeGlobalUI(l) {
-    curL = l; const d = masterData[l] || masterData['en'];
-    document.getElementById('navBrand').innerText = d.nav;
-    document.getElementById('act1').innerText = d.act1;
-    document.getElementById('act2').innerText = d.act2;
-    document.getElementById('prevTitle').innerText = d.prev;
-    document.getElementById('pTitle').innerText = d.pt;
-    document.getElementById('pText').innerText = d.ptx;
-    document.querySelectorAll('.l-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('btn_' + l).classList.add('active');
-    renderGrid();
-}
+function play(id) { document.getElementById('vid').src = `https://www.youtube.com/embed/${id}?autoplay=1`; window.scrollTo(0,400); }
+function changeL(l) { cur = l; render(); }
 window.onload = init;
 </script> </body> </html>
