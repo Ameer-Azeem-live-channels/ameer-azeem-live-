@@ -1,214 +1,143 @@
-<!DOCTYPE html>
-<html lang="ta">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html> <html lang="ta"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- பேஸ்புக் மற்றும் வாட்ஸ்அப் முன்னோட்டம் (Social Share Fix) -->
+<title>Ameer Azeem Global Media - Live TV</title>
+<meta property="og:title" content="Ameer Azeem Global Media">
+<meta property="og:description" content="Watch 65+ Live TV Channels in 7 Languages. Download our App now!">
+<!-- லோகோ லிங்க் - இது இப்போது அச்சுப்பிசகாமல் கொடுக்கப்பட்டுள்ளது -->
+<meta property="og:image" content="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/assets/images/ameer%20azeem%20logo/logo.png.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://ameer-azeem-live-channels.github.io/">
+<meta property="og:type" content="website">
+
+<style>
+    :root { --primary-red: #b71c1c; --bg-black: #030712; --card-bg: #0f172a; --accent-blue: #3b82f6; }
+    body { background-color: var(--bg-black); color: white; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
     
-    <!-- சோசியல் மீடியா லிங்க் ப்ரிவியூ -->
-    <title>Ameer Azeem Global Media - Live TV</title>
-    <meta property="og:title" content="Ameer Azeem Global Media">
-    <meta property="og:description" content="Watch 65+ Live TV Channels in 7 Languages. Download our App now!">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/assets/images/ameer%20azeem%20logo/logo.png.png">
-    <meta property="og:url" content="https://ameer-azeem-live-channels.github.io/">
+    /* லோகோ பகுதி */
+    header { text-align: center; padding: 40px 20px; background: #000; border-bottom: 2px solid var(--primary-red); }
+    .logo { height: 110px; cursor: pointer; transition: 0.4s; filter: drop-shadow(0 0 15px rgba(183,28,28,0.5)); }
+    .logo:hover { transform: scale(1.1); }
 
-    <style>
-        :root { --primary-red: #b71c1c; --bg-black: #030712; --card-bg: #1e293b; --accent-blue: #3b82f6; }
-        body { background-color: var(--bg-black); color: white; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
-        
-        header { text-align: center; padding: 45px 20px; background: linear-gradient(to bottom, #111827, #000); border-bottom: 3px solid var(--primary-red); }
-        .logo { height: 150px; cursor: pointer; transition: 0.5s; filter: drop-shadow(0 0 20px rgba(183,28,28,0.5)); }
-        .logo:hover { transform: scale(1.1); }
-        .dl-hint { color: #94a3b8; font-size: 13px; margin-top: 15px; font-weight: bold; letter-spacing: 1px; }
+    /* ஓடும் செய்தி */
+    .ticker-wrap { background: #111827; height: 45px; display: flex; align-items: center; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .ticker-label { background: var(--primary-red); padding: 0 15px; font-weight: bold; height: 100%; display: flex; align-items: center; font-size: 13px; }
+    .ticker { white-space: nowrap; animation: marquee 25s linear infinite; padding-left: 20px; font-size: 15px; }
+    @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        .ticker-wrap { background: rgba(183, 28, 28, 0.2); height: 50px; display: flex; align-items: center; overflow: hidden; border-bottom: 1px solid #1e293b; }
-        .ticker-label { background: var(--primary-red); padding: 0 20px; font-weight: 900; height: 100%; display: flex; align-items: center; font-size: 13px; z-index: 5; }
-        .ticker { white-space: nowrap; animation: marquee 30s linear infinite; padding-left: 20px; font-size: 16px; }
-        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        
-        .nav-scroll { display: flex; overflow-x: auto; gap: 25px; padding: 30px; justify-content: center; background: #0a0f1e; scrollbar-width: none; }
-        .nav-scroll::-webkit-scrollbar { display: none; }
-        .lang-btn { text-align: center; cursor: pointer; opacity: 0.5; transition: 0.4s; min-width: 95px; }
-        .lang-circle { width: 85px; height: 85px; border-radius: 50%; border: 2px solid #334155; padding: 5px; background: #000; object-fit: cover; }
-        .active-lang { opacity: 1; transform: scale(1.15); }
-        .active-lang .lang-circle { border-color: var(--accent-blue); box-shadow: 0 0 25px var(--accent-blue); }
-        .lang-name { font-size: 13px; margin-top: 10px; font-weight: bold; text-transform: uppercase; }
-
-        .section-header { background: linear-gradient(90deg, #000, var(--primary-red), #000); padding: 18px; text-align: center; font-weight: 900; letter-spacing: 3px; font-size: 16px; }
-        
-        #player-container { width: 95%; max-width: 1000px; margin: 25px auto; aspect-ratio: 16/9; background: #000; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 50px black; }
-        iframe { width: 100%; height: 100%; border: none; }
-        
-        .channel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); gap: 15px; padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
-        .channel-card { background: #0f172a; border-radius: 20px; padding: 20px; text-align: center; cursor: pointer; border: 1px solid rgba(255,255,255,0.03); transition: 0.4s; }
-        .channel-card:hover { transform: translateY(-10px); border-color: var(--accent-blue); background: #1e293b; }
-        .channel-card img { width: 75px; height: 75px; object-fit: contain; }
-
-        .feedback-section { max-width: 550px; margin: 40px auto; padding: 30px; background: #0f172a; border-radius: 25px; text-align: center; border: 1px solid #334155; }
-        .feedback-input { width: 90%; padding: 15px; border-radius: 12px; border: 1px solid #334155; background: #030712; color: white; margin-bottom: 20px; resize: none; font-size: 15px; }
-        .submit-btn { padding: 12px 50px; background: var(--accent-blue); color: white; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; }
-
-        .share-section { text-align: center; padding: 40px 20px; background: #000; border-top: 1px solid #1e293b; }
-        .btn { padding: 15px 35px; border-radius: 40px; color: white; text-decoration: none; font-weight: bold; margin: 10px; display: inline-flex; align-items: center; gap: 10px; font-size: 15px; }
-        .wa { background: #25d366; } .fb { background: #1877f2; }
-        
-        footer { text-align: center; padding: 60px 20px; color: #64748b; font-size: 14px; background: #030712; }
-        .est { color: var(--primary-red); font-weight: bold; font-size: 16px; margin-bottom: 15px; }
-
-        @media (max-width: 600px) {
-            .logo { height: 100px; }
-            .nav-scroll { justify-content: flex-start; padding: 20px; }
-            .channel-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <!-- APK டவுன்லோட் லிங்க் தானாகவே மாறும் -->
-    <a id="apk-download-link" href="#" title="Download App Now">
-        <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/assets/images/ameer%20azeem%20logo/logo.png.png" class="logo" alt="Ameer Azeem">
-    </a>
-    <div id="hint-text" class="dl-hint">ஆப்பை பதிவிறக்கம் செய்ய லோகோவை அழுத்தவும்</div>
-</header>
-
-<div class="ticker-wrap">
-    <div class="ticker-label" id="lbl-live">LIVE NEWS</div>
-    <div class="ticker" id="ticker-text">Welcome to Ameer Azeem Global Media Network!</div>
-</div>
-
-<div class="nav-scroll" id="lang-nav"></div>
-
-<div class="section-header" id="section-title">TAMIL NADU NEWS LIVE</div>
-
-<div id="player-container">
-    <iframe id="main-player" src="https://www.youtube.com/embed/9M02G5c6x6w" allowfullscreen></iframe>
-</div>
-
-<div class="channel-grid" id="channel-list"></div>
-
-<div class="feedback-section">
-    <h3 id="f-title">FEEDBACK</h3>
-    <textarea id="f-msg" class="feedback-input" rows="4" placeholder="Type here..."></textarea><br>
-    <button class="submit-btn" onclick="sendF()" id="f-btn">SUBMIT</button>
-</div>
-
-<div class="share-section">
-    <div id="share-txt" style="color: #94a3b8; margin-bottom: 20px; font-weight: bold;">SHARE WITH FRIENDS</div>
-    <div class="share-bar">
-        <a href="https://api.whatsapp.com/send?text=Watch%20Ameer%20Azeem%20Live%20TV%20https://ameer-azeem-live-channels.github.io/" class="btn wa">WhatsApp</a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://ameer-azeem-live-channels.github.io/" class="btn fb">Facebook</a>
-    </div>
-</div>
-
-<footer>
-    <div id="est-date" class="est">Established: September 2025</div>
-    <p>AMEER AZEEM GLOBAL MEDIA &copy; 2026</p>
-</footer>
-
-<script>
-    const REPO = "Ameer-Azeem-live-channels/ameer-azeem-live-";
-    const GIST_URL = "https://gist.githubusercontent.com/Ameer-Azeem-live-channels/41a0c696f5fb2cb0385390afab22dc7b/raw/channels.json";
-    const IMAGE_BASE = "https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/assets/images/";
-    
-    let allData = {};
-    const categories = ["TAMIL", "ENGLISH", "HINDI", "MALAYALAM", "TELUGU", "KANNADA", "ARABIC"];
-    const langIcons = ["tamil.png", "english.png", "hindi.png", "malayalam.png", "telugu.png", "kanada.png", "arabic.png"];
-
-    const translations = {
-        "TAMIL": { live: "நேரலை செய்திகள்", welcome: "அமீர் அஜீம் மீடியா நெட்வொர்க்கிற்கு உங்களை வரவேற்கிறோம்!", title: "தமிழ் நேரலை செய்திகள்", hint: "ஆப்பை பதிவிறக்கம் செய்ய லோகோவை அழுத்தவும்", ftitle: "கருத்துக்கள்", fbtn: "அனுப்புக", fhold: "இங்கே எழுதவும்...", share: "நண்பர்களுடன் பகிருங்கள்", est: "தொடக்கம்: செப்டம்பர் 2025" },
-        "ENGLISH": { live: "LIVE NEWS", welcome: "Welcome to Ameer Azeem Global Media!", title: "ENGLISH GLOBAL NEWS LIVE", hint: "CLICK LOGO TO DOWNLOAD APP", ftitle: "FEEDBACK", fbtn: "SUBMIT", fhold: "Type here...", share: "SHARE WITH FRIENDS", est: "Established: September 2025" },
-        "HINDI": { live: "लाइव समाचार", welcome: "अमीर अजीम ग्लोबल मीडिया नेटवर्क में आपका स्वागत है!", title: "हिंदी समाचार लाइव", hint: "ऐप डाउनलोड करने के लिए लोगो पर क्लिक करें", ftitle: "प्रतिक्रिया भेजें", fbtn: "जमा करें", fhold: "अपना संदेश यहाँ लिखें...", share: "साझा करें", est: "स्थापित: सितंबर 2025" },
-        "ARABIC": { live: "أخبار مباشرة", welcome: "مرحباً بكم في شبكة أمير عظيم الإعلامية!", title: "الأخبار العربية المباشرة", hint: "انقر فوق الشعار لتنزيل التطبيق", ftitle: "ملاحظات", fbtn: "إرسال", fhold: "اكتب هنا...", share: "شارك", est: "تأسست: سبتمبر 2025" },
-        "MALAYALAM": { live: "തത്സമയ വാർത്തകൾ", welcome: "അമീർ അജീം ഗ്ലോബൽ മീഡിയ നെറ്റ്‌വർക്കിലേക്ക് സ്വാഗതം!", title: "മലയാളം തത്സമയ വാർത്തകൾ", hint: "ആപ്പ് ഡൗൺലോഡ് ചെയ്യാൻ ലോഗോയിൽ ക്ലിക്ക് ചെയ്യുക", ftitle: "അഭിപ്രായം അറിയിക്കുക", fbtn: "അയയ്ക്കുക", fhold: "നിങ്ങളുടെ സന്ദേശം ഇവിടെ ടൈப்புചെയ്യുക...", share: "പങ്കിടുക", est: "സ്ഥാപിതം: സെപ്റ്റംബർ 2025" },
-        "TELUGU": { live: "లైవ్ న్యూస్", welcome: "అమీర్ అజీమ్ గ్ലോబల్ మీడియా నెట్‌వర్క్‌కు స్వాగతం!", title: "తెలుగు లైవ్ న్యూస్", hint: "యాప్‌ను డౌన్‌లోட் చేయడానికి లోగోపై క్லிక్ చేయండి", ftitle: "అభిప్రాయాన్ని పంపండి", fbtn: "సమర్పించు", fhold: "మీ సందేశాన్ని ఇక్కడ టైప్ చేయండి...", share: "షేర్ చేయండి", est: "స్థాపించబడింది: సెప్టెంబర్ 2025" },
-        "KANNADA": { live: "ಲೈವ್ ನ್ಯೂಸ್", welcome: "ಅಮೀರ್ ಅಜೀಮ್ ಗ್ಲೋಬಲ್ ಮೀಡಿಯಾ ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಸುಸ್ವಾಗತ!", title: "ಕನ್ನಡ ಲೈವ್ ನ್ಯೂಸ್", hint: "ಅಪ್ಲಿಕೇಶನ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಲೋಗೋ ಕ್ಲಿಕ್ ಮಾಡಿ", ftitle: "ಪ್ರತಿಕ್ರಿಯೆ ಕಳುஹಿಸಿ", fbtn: "ಸಲ್ಲಿಸು", fhold: "ನಿಮ್ಮ ಸಂದೇಶವನ್ನು ಇಲ್ಲಿ ಟೈಪ್ ಮಾಡಿ...", share: "ಹಂಚಿಕೊಳ್ಳಿ", est: "ಸ್ಥಾಪನೆ: ಸೆಪ್ಟೆம்பர் 2025" }
-    };
-
-    const channelMapping = {
-        "TAMIL": ["sun-news.png.png", "news-seven.png.png", "tamil-news.png.png", "news-thanthi.png.png", "polimer-news.png.png", "sathiya-news.png.png", "jayapluse-news.png.png", "kalaigar- news.png.png", "malaimurasu-news.png.png", "tamilnadu-news18.png.png", "puthiya-thalaimurai-news.png.png"],
-        "ENGLISH": ["repulics-english.png.png", "Time-now-english.png.png", "ndtc-english.png.png", "india-today-english.png.png", "cnn-english.png.png", "wion-english.png.png", "Sky-news-english.png.png", "dw-news-english.png.png", "al-Jazeera-english.png.png", "al-arabiya-english.png.png", "first-post-english.png.png", "united-nations-english.png.png", "earch-cam.png.png", "cruxnews.png"],
-        "HINDI": ["aaj-tak-hindi-news.png.png", "abp-hindi-news.png.png", "z-news-hindi.png.png", "india-today-news.png.png", "cnn-hindi-news18.png.png", "republic-bharath-news.png.png", "time-nowhindi-news.png.png", "tv9-hindi-news.png.png", "24-think-hindi -news.png.png", "dd-news-hindi.png.png", "dna-hindi-news.png.png"],
-        "MALAYALAM": ["asianet-news.png.png", "twenty-four-news.png.png", "media-one-news.png", "reporter-news.png.png", "kairali-news.png", "news18 -malayalam.png", "big-tv-news.png"],
-        "TELUGU": ["tv9-telugu-news.png", "ntv-telugu-news.png", "z-news-telugu.png", "abc-telugu-news.png", "tv5-news-telugu.png", "10tv-telugu-news.png", "hmtv-telugu-news.png", "bigtv-news-telugu.png"],
-        "KANNADA": ["tv9-kanada-news.png.png", "news18-kanada.png.png", "news1st-kanada.png.png", "asianet-nwes-kanada.png.png"],
-        "ARABIC": ["sky-news.png.png", "al-arabiya-news.png.png", "aljazeera-news.png.png", "france24-news.png.png", "al-quran-makkah.png.png", "arbic-alghad-news.png.png", "arabic-alaraby-news.png.png", "money-controal-arabic-news.png.png", "aljazeera- mubasher-news.png.png"]
-    };
-
-    // தானாகவே லேட்டஸ்ட் APK-வை கண்டுபிடிக்கும் ஸ்மார்ட் ஃபங்ஷன்
-    async function fetchLatestApk() {
-        try {
-            const response = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`);
-            const data = await response.json();
-            // அனைத்து அசெட்களையும் ஸ்கேன் செய்து .apk கோப்பை மட்டும் எடுக்கிறது
-            const apkAsset = data.assets.find(asset => asset.name.endsWith('.apk'));
-            if (apkAsset) {
-                document.getElementById('apk-download-link').href = apkAsset.browser_download_url;
-            }
-        } catch (e) { console.error("APK Fetch Error"); }
+    /* மொழி தேர்வுகள் - GLOWING EFFECT */
+    .nav-scroll { display: flex; overflow-x: auto; gap: 20px; padding: 30px; justify-content: center; background: #0a0f1e; }
+    .lang-btn { text-align: center; cursor: pointer; transition: 0.3s; opacity: 0.6; }
+    .lang-circle { 
+        width: 80px; height: 80px; border-radius: 50%; 
+        border: 2px solid #334155; padding: 3px; background: #000; 
+        object-fit: cover; transition: 0.4s; 
     }
+    .lang-btn:hover, .active-lang { opacity: 1; transform: scale(1.1); }
+    
+    /* ஒவ்வொரு மொழிக்கும் தனித்தனியான மின்னும் எஃபெக்ட் */
+    .active-lang .lang-circle { border-color: var(--accent-blue); box-shadow: 0 0 20px var(--accent-blue); }
+    .lang-name { font-size: 12px; margin-top: 10px; font-weight: bold; color: #94a3b8; text-transform: uppercase; }
+    .active-lang .lang-name { color: var(--accent-blue); }
 
-    async function init() {
-        await fetchLatestApk(); 
+    /* பிளேயர் */
+    #player-container { width: 90%; max-width: 950px; margin: 25px auto; aspect-ratio: 16/9; background: #000; border-radius: 15px; overflow: hidden; box-shadow: 0 0 30px rgba(0,0,0,1); }
+    iframe { width: 100%; height: 100%; border: none; }
+
+    /* சேனல் லிஸ்ட் */
+    .channel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 15px; padding: 25px; max-width: 1100px; margin: 0 auto; }
+    .channel-card { 
+        background: var(--card-bg); border-radius: 15px; padding: 12px; 
+        text-align: center; cursor: pointer; transition: 0.3s; 
+        border: 1px solid rgba(255,255,255,0.05); 
+    }
+    .channel-card:hover { transform: scale(1.1); border-color: var(--accent-blue); background: #1e293b; }
+    .channel-card img { width: 65px; height: 65px; object-fit: contain; }
+
+    /* ஷேர் & ஃபூட்டர் */
+    .share-section { text-align: center; padding: 40px 20px; background: #000; border-top: 1px solid #1e293b; }
+    .btn { padding: 12px 25px; border-radius: 30px; color: white; text-decoration: none; font-weight: bold; margin: 10px; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; }
+    .wa { background: #25d366; } .fb { background: #1877f2; }
+    
+    footer { text-align: center; padding: 50px 20px; color: #64748b; font-size: 13px; }
+    .est { color: var(--primary-red); font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+</style>
+</head> <body>
+<header> <a href="https://github.com/Ameer-Azeem-live-channels/ameer-azeem-live-/releases/download/v1.0/app-armeabi-v7a-release.apk"> <img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/assets/images/ameer%20azeem%20logo/logo.png.png" class="logo" alt="Ameer Azeem"> </a> </header>
+<div class="ticker-wrap"> <div class="ticker-label" id="lbl-live">LIVE NEWS</div> <div class="ticker" id="ticker-text">Welcome to Ameer Azeem Global Media Network!</div> </div>
+<div class="nav-scroll" id="lang-nav"></div>
+<div id="player-container"> <iframe id="main-player" src="https://www.youtube.com/embed/9M02G5c6x6w" allowfullscreen></iframe> </div>
+<div class="channel-grid" id="channel-list"></div>
+<footer> <div id="est-date" class="est">Established: September 2025</div> <p>AMEER AZEEM GLOBAL MEDIA © 2026</p> <a href="https://t.me/AjiranGroup" style="color: #3b82f6; text-decoration: none; border: 1px solid #3b82f6; padding: 10px 20px; border-radius: 25px; display: inline-block; margin-top: 20px; font-weight: bold;">💬 SEND FEEDBACK</a> </footer>
+<script> // கிட்ஹப் இமேஜ் லிங்குகள் சரிபார்க்கப்பட்டு இங்கே கொடுக்கப்பட்டுள்ளது const IMAGE_BASE = "https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/assets/images/"; const GIST_URL = "https://gist.githubusercontent.com/Ameer-Azeem-live-channels/41a0c696f5fb2cb0385390afab22dc7b/raw/channels.json";
+let allData = {};
+const categories = ["TAMIL", "ENGLISH", "HINDI", "MALAYALAM", "TELUGU", "KANNADA", "ARABIC"];
+
+// உங்கள் கிட்ஹப் ஃபோல்டரில் உள்ள சரியான இமேஜ் பெயர்கள்
+const langIcons = {
+    "TAMIL": "languages/tamil.png",
+    "ENGLISH": "languages/english.png",
+    "HINDI": "languages/hindi.png",
+    "MALAYALAM": "languages/malayalam.png",
+    "TELUGU": "languages/telugu.png",
+    "KANNADA": "languages/kanada.png",
+    "ARABIC": "languages/arabic.png"
+};
+
+const channelMapping = {
+    "TAMIL": ["sun-news.png.png", "news-seven.png.png", "tamil-news.png.png", "news-thanthi.png.png", "polimer-news.png.png", "sathiya-news.png.png", "jayapluse-news.png.png", "kalaigar- news.png.png", "malaimurasu-news.png.png", "tamilnadu-news18.png.png", "puthiya-thalaimurai-news.png.png"],
+    "ENGLISH": ["repulics-english.png.png", "Time-now-english.png.png", "ndtc-english.png.png", "india-today-english.png.png", "cnn-english.png.png", "wion-english.png.png", "Sky-news-english.png.png", "dw-news-english.png.png", "al-Jazeera-english.png.png", "al-arabiya-english.png.png", "first-post-english.png.png", "united-nations-english.png.png", "earch-cam.png.png", "cruxnews.png"],
+    "HINDI": ["aaj-tak-hindi-news.png.png", "abp-hindi-news.png.png", "z-news-hindi.png.png", "india-today-news.png.png", "cnn-hindi-news18.png.png", "republic-bharath-news.png.png", "time-nowhindi-news.png.png", "tv9-hindi-news.png.png", "24-think-hindi -news.png.png", "dd-news-hindi.png.png", "dna-hindi-news.png.png"],
+    "MALAYALAM": ["asianet-news.png.png", "twenty-four-news.png.png", "media-one-news.png", "reporter-news.png.png", "kairali-news.png", "news18 -malayalam.png", "big-tv-news.png"],
+    "TELUGU": ["tv9-telugu-news.png.png", "ntv-telugu-news.png.png", "z-news-telugu.png.png", "abc-telugu-news.png.png", "tv5-news-telugu.png.png", "10tv-telugu-news.png.png", "hmtv-telugu-news.png.png", "bigtv-news-telugu.png.png"],
+    "KANNADA": ["tv9-kanada-news.png.png", "news18-kanada.png.png", "news1st-kanada.png.png", "asianet-nwes-kanada.png.png"],
+    "ARABIC": ["sky-news.png.png", "al-arabiya-news.png.png", "aljazeera-news.png.png", "france24-news.png.png", "al-quran-makkah.png.png", "arbic-alghad-news.png.png", "arabic-alaraby-news.png.png", "money-controal-arabic-news.png.png", "aljazeera- mubasher-news.png.png"]
+};
+
+async function init() {
+    try {
         const res = await fetch(GIST_URL + "?t=" + Date.now());
         allData = await res.json();
         loadNav();
-        changeLanguage("TAMIL");
-    }
+        loadChannels("TAMIL");
+    } catch (e) { console.error("Init Error"); }
+}
 
-    function loadNav() {
-        const nav = document.getElementById('lang-nav');
-        categories.forEach((cat, i) => {
-            const div = document.createElement('div');
-            div.className = 'lang-btn' + (cat === "TAMIL" ? " active-lang" : "");
-            div.id = `btn-${cat}`;
-            div.onclick = () => changeLanguage(cat);
-            div.innerHTML = `<img src="${IMAGE_BASE}languages/${langIcons[i]}" class="lang-circle"><div class="lang-name">${cat}</div>`;
-            nav.appendChild(div);
-        });
-    }
+function loadNav() {
+    const nav = document.getElementById('lang-nav');
+    categories.forEach(cat => {
+        const div = document.createElement('div');
+        div.className = 'lang-btn' + (cat === "TAMIL" ? " active-lang" : "");
+        div.id = `btn-${cat}`;
+        div.onclick = () => {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active-lang'));
+            div.classList.add('active-lang');
+            loadChannels(cat);
+        };
+        // இமேஜ் லிங்க் இடைவெளிகளை (Spaces) %20 என மாற்றுகிறது
+        const imgUrl = (IMAGE_BASE + langIcons[cat]).replace(/ /g, "%20");
+        div.innerHTML = `<img src="${imgUrl}" class="lang-circle"><div class="lang-name">${cat}</div>`;
+        nav.appendChild(div);
+    });
+}
 
-    function changeLanguage(lang) {
-        const t = translations[lang] || translations["ENGLISH"];
-        document.getElementById('lbl-live').innerText = t.live;
-        document.getElementById('ticker-text').innerText = allData.admin_message || t.welcome;
-        document.getElementById('section-title').innerText = t.title;
-        document.getElementById('hint-text').innerText = t.hint;
-        document.getElementById('f-title').innerText = t.ftitle;
-        document.getElementById('f-btn').innerText = t.fbtn;
-        document.getElementById('f-msg').placeholder = t.fhold;
-        document.getElementById('share-txt').innerText = t.share;
-        document.getElementById('est-date').innerText = t.est;
+function loadChannels(lang) {
+    const grid = document.getElementById('channel-list');
+    grid.innerHTML = "";
+    const folder = lang.toLowerCase() + "channels/";
+    channelMapping[lang].forEach(ch => {
+        const card = document.createElement('div');
+        card.className = 'channel-card';
+        card.onclick = () => {
+            const vid = allData[ch];
+            if(vid) document.getElementById('main-player').src = `https://www.youtube.com/embed/${vid}?autoplay=1`;
+            window.scrollTo({top: 150, behavior: 'smooth'});
+        };
+        const chImg = (IMAGE_BASE + folder + ch).replace(/ /g, "%20");
+        card.innerHTML = `<img src="${chImg}" onerror="this.src='${IMAGE_BASE.replace(/ /g, "%20")}ameer%20azeem%20logo/logo.png.png'">`;
+        grid.appendChild(card);
+    });
+}
 
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active-lang'));
-        document.getElementById(`btn-${lang}`).classList.add('active-lang');
-
-        const grid = document.getElementById('channel-list');
-        grid.innerHTML = "";
-        const folder = lang.toLowerCase() + "channels/";
-        channelMapping[lang].forEach(ch => {
-            const card = document.createElement('div');
-            card.className = 'channel-card';
-            card.onclick = () => {
-                const vid = allData[ch];
-                if(vid) {
-                    document.getElementById('main-player').src = `https://www.youtube.com/embed/${vid}?autoplay=1`;
-                    window.scrollTo({top: 200, behavior: 'smooth'});
-                }
-            };
-            card.innerHTML = `<img src="${IMAGE_BASE}${folder}${ch}" onerror="this.src='${IMAGE_BASE}ameer%20azeem%20logo/logo.png.png'">`;
-            grid.appendChild(card);
-        });
-    }
-
-    function sendF() {
-        const msg = document.getElementById('f-msg').value;
-        if(!msg) return;
-        window.open(`https://t.me/AjiranGroup?text=${encodeURIComponent("FEEDBACK: " + msg)}`, '_blank');
-        alert("Success! Feedback Sent.");
-        document.getElementById('f-msg').value = "";
-    }
-
-    init();
-</script>
-</body>
-</html>
+init();
+</script> </body> </html>
