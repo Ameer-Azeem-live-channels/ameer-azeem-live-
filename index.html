@@ -4,69 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ameer Azeem Global Media - Live TV</title>
-    
-    <!-- சோசியல் மீடியா லிங்க் ப்ரிவியூ -->
-    <meta property="og:title" content="Ameer Azeem Global Media">
-    <meta property="og:description" content="Watch 65+ Live Channels. Join our Community & Download App!">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/logo.png.png">
-
     <style>
         :root { --primary-red: #ff0000; --bg-black: #020617; --card-bg: #0f172a; --accent-blue: #3b82f6; }
         body { background-color: var(--bg-black); color: white; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
         
+        /* 1. லோகோ & பர்னிங் எஃபெக்ட் */
         header { text-align: center; padding: 40px 20px; background: linear-gradient(to bottom, #111827, #000); border-bottom: 3px solid var(--primary-red); }
         .logo-container { display: inline-block; position: relative; }
-        .logo { 
-            height: 130px; cursor: pointer; position: relative; z-index: 2;
-            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .logo-glow {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 150px; height: 150px; background: var(--primary-red);
-            border-radius: 50%; filter: blur(40px); opacity: 0.6; z-index: 1;
-            animation: fireBlink 1.5s infinite alternate;
-        }
-        @keyframes fireBlink {
-            0% { opacity: 0.4; transform: translate(-50%, -50%) scale(0.9); }
-            100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 40px var(--primary-red); }
-        }
+        .logo { height: 120px; cursor: pointer; position: relative; z-index: 2; transition: 0.3s; }
+        .logo-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; background: var(--primary-red); border-radius: 50%; filter: blur(40px); opacity: 0.5; animation: fire 1.5s infinite alternate; }
+        @keyframes fire { from { transform: translate(-50%, -50%) scale(0.9); opacity: 0.4; } to { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; } }
+        .dl-hint { color: #94a3b8; font-size: 13px; margin-top: 15px; font-weight: bold; }
 
-        .ticker-wrap { background: #111827; height: 50px; display: flex; align-items: center; overflow: hidden; border-bottom: 1px solid #1e293b; }
-        .ticker-label { background: var(--primary-red); padding: 0 20px; font-weight: 900; height: 100%; display: flex; align-items: center; font-size: 13px; z-index: 10; }
-        .ticker { white-space: nowrap; animation: marquee 25s linear infinite; padding-left: 20px; font-size: 16px; }
+        /* 2. ஓடும் செய்தி */
+        .ticker-wrap { background: #111827; height: 45px; display: flex; align-items: center; overflow: hidden; border-bottom: 1px solid #1e293b; }
+        .ticker-label { background: var(--primary-red); padding: 0 15px; font-weight: 900; height: 100%; display: flex; align-items: center; font-size: 12px; }
+        .ticker { white-space: nowrap; animation: marquee 25s linear infinite; padding-left: 20px; font-size: 15px; }
         @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        /* சிறிய மற்றும் நகரும் மொழி பட்டன்கள் (Smaller & Sliding Nav) */
-        .nav-scroll { 
-            display: flex; overflow-x: auto; gap: 15px; padding: 20px; 
-            background: #0a0f1e; scrollbar-width: none; -ms-overflow-style: none;
-            justify-content: flex-start; /* மொபைலில் நகர்த்த ஏதுவாக இடது பக்கம் */
-        }
+        /* 3. சிறிய & நகரும் மொழி வட்டங்கள் */
+        .nav-scroll { display: flex; overflow-x: auto; gap: 12px; padding: 20px; background: #0a0f1e; scrollbar-width: none; -ms-overflow-style: none; padding-left: 20px; }
         .nav-scroll::-webkit-scrollbar { display: none; }
-        .lang-btn { text-align: center; cursor: pointer; opacity: 0.6; transition: 0.4s; min-width: 70px; }
-        .lang-circle { 
-            width: 60px; height: 60px; border-radius: 50%; border: 2px solid #334155; 
-            background: #1e293b; display: flex; align-items: center; 
-            justify-content: center; font-weight: 900; font-size: 18px; color: #fff;
-        }
-        .active-lang { opacity: 1; transform: scale(1.05); }
+        .lang-btn { text-align: center; cursor: pointer; opacity: 0.6; transition: 0.3s; min-width: 65px; }
+        .lang-circle { width: 55px; height: 55px; border-radius: 50%; border: 2px solid #334155; background: #1e293b; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; }
+        .active-lang { opacity: 1; transform: scale(1.1); }
         .active-lang .lang-circle { border-color: var(--accent-blue); box-shadow: 0 0 15px var(--accent-blue); }
 
-        #player-container { width: 95%; max-width: 900px; margin: 20px auto; aspect-ratio: 16/9; background: #000; border-radius: 15px; overflow: hidden; }
+        /* 4. பிளேயர் */
+        .section-header { background: linear-gradient(90deg, #000, var(--primary-red), #000); padding: 12px; text-align: center; font-weight: bold; font-size: 13px; margin: 15px 0; }
+        #player-container { width: 95%; max-width: 850px; margin: 0 auto; aspect-ratio: 16/9; background: #000; border-radius: 12px; overflow: hidden; border: 1px solid #1e293b; }
         iframe { width: 100%; height: 100%; border: none; }
 
-        .channel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px; padding: 20px; max-width: 1000px; margin: 0 auto; }
-        .channel-card { background: var(--card-bg); border-radius: 12px; padding: 10px; text-align: center; cursor: pointer; transition: 0.3s; }
-        .channel-card img { width: 55px; height: 55px; object-fit: contain; }
+        /* 5. கமிங் சூன் ஸ்லைடர் */
+        .soon-box { padding: 20px; overflow-x: auto; display: flex; gap: 15px; scrollbar-width: none; }
+        .soon-card { min-width: 130px; height: 180px; background: #0f172a; border-radius: 10px; position: relative; border: 1px solid #1e293b; opacity: 0.7; }
+        .soon-label { position: absolute; top: 10px; right: 10px; background: orange; color: black; font-size: 8px; padding: 2px 5px; font-weight: bold; border-radius: 3px; }
+        .soon-card img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
 
-        /* சமூக வலைத்தளங்கள் & டெலிகிராம் ஹப் */
-        .hub-section { text-align: center; padding: 40px 20px; background: #000; }
-        .btn-grid { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-        .hub-btn { padding: 12px 25px; border-radius: 30px; color: white; text-decoration: none; font-weight: bold; font-size: 13px; display: flex; align-items: center; gap: 8px; min-width: 180px; justify-content: center; }
-        
-        .wa-btn { background: #25d366; } 
-        .fb-btn { background: #1877f2; } 
-        .tg-btn { background: #0088cc; } 
+        /* 6. சேனல் கிரிட் */
+        .channel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(95px, 1fr)); gap: 10px; padding: 20px; max-width: 1000px; margin: 0 auto; }
+        .channel-card { background: #0f172a; border-radius: 10px; padding: 10px; text-align: center; cursor: pointer; transition: 0.2s; border: 1px solid #1e293b; }
+        .channel-card:hover { transform: scale(1.05); border-color: var(--accent-blue); }
+        .channel-card img { width: 50px; height: 50px; object-fit: contain; }
+
+        /* 7. சமூக வலைத்தள ஹப் */
+        .hub-section { text-align: center; padding: 40px 20px; background: #000; border-top: 1px solid #1e293b; }
+        .btn-grid { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+        .hub-btn { padding: 12px 20px; border-radius: 30px; color: white; text-decoration: none; font-weight: bold; font-size: 12px; display: flex; align-items: center; gap: 8px; min-width: 160px; justify-content: center; }
+        .wa-btn { background: #25d366; } .fb-btn { background: #1877f2; } .tg-btn { background: #0088cc; } .ig-btn { background: #e1306c; }
 
         footer { text-align: center; padding: 40px 20px; background: #030712; border-top: 1px solid #1e293b; }
     </style>
@@ -76,20 +61,21 @@
 <header>
     <div class="logo-container">
         <div class="logo-glow"></div>
-        <!-- லோகோவை அழுத்தினால் ஏபிகே டவுன்லோட் ஆகும் -->
-        <a href="javascript:void(0)" onclick="smartDownload()" title="Download Official App">
+        <a href="javascript:void(0)" onclick="smartDownload()">
             <img src="logo.png.png" class="logo" alt="Ameer Azeem">
         </a>
     </div>
-    <div style="color: #94a3b8; font-size: 14px; margin-top: 15px; font-weight: bold;">ஆப்பை டவுன்லோட் செய்ய லோகோவை அழுத்தவும்</div>
+    <div class="dl-hint">ஆப்பை பதிவிறக்கம் செய்ய லோகோவை அழுத்தவும்</div>
 </header>
 
 <div class="ticker-wrap">
-    <div class="ticker-label" id="lbl-live">நேரலை</div>
-    <div class="ticker" id="ticker-text">அமீர் அஜீம் மீடியா நெட்வொர்க்கிற்கு உங்களை வரவேற்கிறோம்!</div>
+    <div class="ticker-label">நேரலை</div>
+    <div class="ticker" id="ticker-text">Welcome to Ameer Azeem Global Network!</div>
 </div>
 
 <div class="nav-scroll" id="lang-nav"></div>
+
+<div class="section-header" id="section-title">TAMIL LIVE NEWS</div>
 
 <div id="player-container">
     <iframe id="main-player" src="https://www.youtube.com/embed/9M02G5c6x6w" allowfullscreen></iframe>
@@ -97,56 +83,64 @@
 
 <div class="channel-grid" id="channel-list"></div>
 
+<!-- 🌟 கமிங் சூன் ஸ்லைடர் -->
+<div style="padding-left: 20px; color: #64748b; font-size: 12px; font-weight: bold;">OTHER CATEGORIES (COMING SOON)</div>
+<div class="soon-box">
+    <div class="soon-card"><div class="soon-label">SOON</div><img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/education.png"></div>
+    <div class="soon-card"><div class="soon-label">SOON</div><img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/cinema.png"></div>
+    <div class="soon-card"><div class="soon-label">SOON</div><img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/sports.png"></div>
+    <div class="soon-card"><div class="soon-label">SOON</div><img src="https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/cartoon.png"></div>
+</div>
+
 <div class="hub-section">
-    <h3>JOIN OUR OFFICIAL COMMUNITY</h3>
+    <h3 style="font-size: 14px;">JOIN OUR TELEGRAM COMMUNITY</h3>
     <div class="btn-grid">
-        <a href="https://t.me/ameerazeemgloballivechannel" class="hub-btn tg-btn">JOIN TELEGRAM HUB</a>
-        <a href="javascript:void(0)" onclick="shareWebsite('whatsapp')" class="hub-btn wa-btn">WhatsApp Share</a>
-        <a href="javascript:void(0)" onclick="shareWebsite('facebook')" class="hub-btn fb-btn">Facebook Share</a>
+        <a href="https://t.me/ameerazeemgloballivechannel" class="hub-btn tg-btn">JOIN TELEGRAM</a>
+        <a href="javascript:void(0)" onclick="shareNow('whatsapp')" class="hub-btn wa-btn">WhatsApp Share</a>
+        <a href="javascript:void(0)" onclick="shareNow('facebook')" class="hub-btn fb-btn">Facebook Share</a>
+        <a href="https://t.me/ameerazeemgloballivechannel" class="hub-btn ig-btn">Instagram Share</a>
     </div>
 </div>
 
 <footer>
-    <p>AMEER AZEEM GLOBAL MEDIA &copy; 2026</p>
-    <!-- ஃபீட்பேக் நேரடியாக டெலிகிராமிற்கு -->
-    <a href="https://t.me/ameerazeemgloballivechannel" style="color: #3b82f6; text-decoration: none; border: 1px solid #3b82f6; padding: 10px 25px; border-radius: 30px; display: inline-block;">SUPPORT & FEEDBACK</a>
+    <a href="https://t.me/ameerazeemgloballivechannel" style="color: #3b82f6; text-decoration: none; border: 1px solid #3b82f6; padding: 8px 20px; border-radius: 20px; font-size: 12px;">SUPPORT & FEEDBACK</a>
+    <p style="color: #475569; font-size: 11px; margin-top: 20px;">AMEER AZEEM GLOBAL MEDIA &copy; 2026</p>
 </footer>
 
 <script>
-    const TG_LINK = "https://t.me/ameerazeemgloballivechannel";
     const GIST_URL = "https://gist.githubusercontent.com/Ameer-Azeem-live-channels/41a0c696f5fb2cb0385390afab22dc7b/raw/channels.json";
-    const IMAGE_BASE = "https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/";
+    const IMG_BASE = "https://raw.githubusercontent.com/Ameer-Azeem-live-channels/ameer-azeem-live-/main/";
+    const CATEGORIES = ["TAMIL", "ENGLISH", "HINDI", "MALAYALAM", "TELUGU", "KANNADA", "ARABIC"];
     
     let allData = {};
-    const categories = ["TAMIL", "ENGLISH", "HINDI", "MALAYALAM", "TELUGU", "KANNADA", "ARABIC"];
 
-    const channelMapping = {
-        "TAMIL": ["sun-news.png.png", "news-seven.png.png", "tamil-news.png.png", "news-thanthi.png.png", "polimer-news.png.png", "sathiya-news.png.png"],
-        "ENGLISH": ["repulics-english.png.png", "Time-now-english.png.png", "india-today-english.png.png", "cnn-english.png.png"],
+    const mapping = {
+        "TAMIL": ["sun-news.png.png", "polimer-news.png.png", "news-thanthi.png.png", "news-seven.png.png"],
+        "ENGLISH": ["repulics-english.png.png", "Time-now-english.png.png", "india-today-english.png.png"],
         "HINDI": ["aaj-tak-hindi-news.png.png", "abp-hindi-news.png.png"],
         "MALAYALAM": ["asianet-news.png.png", "twenty-four-news.png.png"],
         "TELUGU": ["tv9-telugu-news.png.png", "ntv-telugu-news.png.png"],
         "KANNADA": ["tv9-kanada-news.png.png", "news18-kanada.png.png"],
-        "ARABIC": ["sky-news.png.png", "al-arabiya-news.png.png", "aljazeera-news.png.png"]
+        "ARABIC": ["sky-news.png.png", "aljazeera-news.png.png"]
     };
 
     async function init() {
         try {
-            const resData = await fetch(GIST_URL + "?t=" + Date.now());
-            allData = await resData.json();
+            const res = await fetch(GIST_URL + "?t=" + Date.now());
+            allData = await res.json();
             loadNav();
             changeLanguage("TAMIL");
-        } catch(e) { console.error("Load Error"); }
+        } catch(e) { console.error("Error"); }
     }
 
     function loadNav() {
         const nav = document.getElementById('lang-nav');
-        categories.forEach(cat => {
+        CATEGORIES.forEach(cat => {
             const div = document.createElement('div');
             div.className = 'lang-btn' + (cat === "TAMIL" ? " active-lang" : "");
             div.id = `btn-${cat}`;
             div.onclick = () => changeLanguage(cat);
-            div.innerHTML = `<div class="lang-circle">${cat.charAt(0)}</div><div style="font-size:10px; margin-top:5px;">${cat}</div>`;
+            div.innerHTML = `<div class="lang-circle">${cat.charAt(0)}</div><div style="font-size:9px; margin-top:5px;">${cat}</div>`;
             nav.appendChild(div);
         });
     }
@@ -154,39 +148,38 @@
     function changeLanguage(lang) {
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active-lang'));
         document.getElementById(`btn-${lang}`).classList.add('active-lang');
-
+        document.getElementById('section-title').innerText = lang + " LIVE NEWS";
+        
         const grid = document.getElementById('channel-list');
         grid.innerHTML = "";
-        channelMapping[lang].forEach(ch => {
+        mapping[lang].forEach(ch => {
             const card = document.createElement('div');
             card.className = 'channel-card';
             card.onclick = () => {
                 const vid = allData[ch];
                 if(vid) document.getElementById('main-player').src = `https://www.youtube.com/embed/${vid}?autoplay=1`;
+                window.scrollTo({top: 200, behavior: 'smooth'});
             };
-            const chImg = (IMAGE_BASE + ch).replace(/ /g, "%20");
-            card.innerHTML = `<img src="${chImg}" onerror="this.src='logo.png.png'">`;
+            card.innerHTML = `<img src="${(IMG_BASE+ch).replace(/ /g,"%20")}" onerror="this.src='logo.png.png'">`;
             grid.appendChild(card);
         });
     }
 
-    // ஷேர் வசதி - வெப்சைட் லிங்க்கை ஷேர் செய்யும்
-    function shareWebsite(platform) {
+    function shareNow(p) {
         const url = window.location.href;
-        const text = encodeURIComponent("Watch 7 Languages Live TV! Join our community: ");
-        if(platform === 'whatsapp') window.open(`https://api.whatsapp.com/send?text=${text}${url}`);
-        if(platform === 'facebook') window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`);
+        const msg = encodeURIComponent("Watch Live TV in 7 Languages! ");
+        if(p==='whatsapp') window.open(`https://api.whatsapp.com/send?text=${msg}${url}`);
+        else window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`);
     }
 
-    // ஸ்மார்ட் டவுன்லோட் - லோகோவை அழுத்தினால் வேலை செய்யும்
     function smartDownload() {
         const ua = navigator.userAgent.toLowerCase();
-        let apk = "app-arm64-v8a-release.apk"; // New phones
+        let baseUrl = "https://github.com/Ameer-Azeem-live-channels/ameer-azeem-live-/releases/download/v1.0/";
+        let apk = "app-arm64-v8a-release.apk"; // New phones (Default)
         if (ua.indexOf("armeabi-v7a") > -1) apk = "app-armeabi-v7a-release.apk"; // Old phones
-        
-        window.location.href = `https://github.com/Ameer-Azeem-live-channels/ameer-azeem-live-/releases/download/v1.0/${apk}`;
+        else if (ua.indexOf("x86_64") > -1) apk = "app-x86_64-release.apk"; // Tablets/PC
+        window.location.href = baseUrl + apk;
     }
-
     init();
 </script>
 </body>
